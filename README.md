@@ -26,3 +26,6 @@ Everest is formed by 4 people.
 - Gameplay Design
 - Modelling
 
+## Related Resources
+- Video: https://youtu.be/HThGDFUo_CE
+- Freedcamp: https://freedcamp.com/view/3147834/tasks
