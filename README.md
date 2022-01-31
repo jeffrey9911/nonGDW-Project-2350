@@ -29,5 +29,4 @@ Everest is formed by 4 people.
 
 **Related Resource**
 - Video:https://youtu.be/HThGDFUo_CE
-- Freedcamp: https://freedcamp.com/view/3147834/tasks
-
+- Trello: https://trello.com/invite/b/6C8ORmxh/835235d036f32fd708ae524acd87e05d/everest2022winfr2350project
