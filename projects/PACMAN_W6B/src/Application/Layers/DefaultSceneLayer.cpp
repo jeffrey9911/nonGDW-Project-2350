@@ -285,7 +285,7 @@ void DefaultSceneLayer::_CreateScene()
 
 		Material::Sptr brownMat = ResourceManager::CreateAsset<Material>(blinnShader);
 		{
-			brownMat->Name = "Tree-Mat";
+			brownMat->Name = "Branch-Mat";
 			brownMat->Set("u_Material.Diffuse", BrownTex);
 			brownMat->Set("u_Material.Shininess", 1.0f);
 		}
