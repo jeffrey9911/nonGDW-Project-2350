@@ -143,13 +143,19 @@ void DefaultSceneLayer::_CreateScene()
 
 		MeshResource::Sptr rock1Mesh = ResourceManager::CreateAsset<MeshResource>("objs/rocks/rock1.obj");
 		MeshResource::Sptr branch1Mesh = ResourceManager::CreateAsset<MeshResource>("objs/branches/branches.obj");
+		MeshResource::Sptr tree1Mesh = ResourceManager::CreateAsset<MeshResource>("objs/tree/tree.obj");
+		MeshResource::Sptr coin1Mesh = ResourceManager::CreateAsset<MeshResource>("objs/coins/coin.obj");
 
 		// Load in some textures
 		Texture2D::Sptr		characterTex = ResourceManager::CreateAsset<Texture2D>("textures/RacoonUV.png");
 		Texture2D::Sptr		yellowCarTex = ResourceManager::CreateAsset<Texture2D>("textures/YellowStripeUV.png");
 		Texture2D::Sptr		terrianTex = ResourceManager::CreateAsset<Texture2D>("textures/GroundTex.png");
 		Texture2D::Sptr		goalTex = ResourceManager::CreateAsset<Texture2D>("textures/CoinUV.png");
-
+		Texture2D::Sptr     coinTex = ResourceManager::CreateAsset<Texture2D>("textures/CoinTexture.png");
+		Texture2D::Sptr     GrassTex = ResourceManager::CreateAsset<Texture2D>("textures/FullGrass.png");
+		Texture2D::Sptr     TreeTex = ResourceManager::CreateAsset<Texture2D>("textures/treeTexture.png");
+		Texture2D::Sptr     BrownTex = ResourceManager::CreateAsset<Texture2D>("textures/Brown.png");
+		
 		Texture2D::Sptr    boxTexture = ResourceManager::CreateAsset<Texture2D>("textures/box-diffuse.png");
 		Texture2D::Sptr    boxSpec = ResourceManager::CreateAsset<Texture2D>("textures/box-specular.png");
 
@@ -243,7 +249,7 @@ void DefaultSceneLayer::_CreateScene()
 		Material::Sptr goalTextureMat = ResourceManager::CreateAsset<Material>(blinnShader);
 		{
 			goalTextureMat->Name = "wallMaterial";
-			goalTextureMat->Set("u_Material.Diffuse", goalTex);
+			goalTextureMat->Set("u_Material.Diffuse", coinTex);
 			goalTextureMat->Set("u_Material.Shininess", 0.8f);
 
 		}
@@ -259,8 +265,8 @@ void DefaultSceneLayer::_CreateScene()
 		Material::Sptr terrainMat = ResourceManager::CreateAsset<Material>(blinnShader);
 		{
 			terrainMat->Name = "Terrain-Mat";
-			terrainMat->Set("u_Material.Diffuse", solidWhiteTex);
-			terrainMat->Set("u_Material.Shininess", 0.5f);
+			terrainMat->Set("u_Material.Diffuse", GrassTex);
+			terrainMat->Set("u_Material.Shininess", 1.0f);
 		}
 
 		Material::Sptr rockMat = ResourceManager::CreateAsset<Material>(blinnShader);
@@ -268,6 +274,20 @@ void DefaultSceneLayer::_CreateScene()
 			rockMat->Name = "Rock-Mat";
 			rockMat->Set("u_Material.Diffuse", solidWhiteTex);
 			rockMat->Set("u_Material.Shininess", 1.0f);
+		}
+
+		Material::Sptr treeMat = ResourceManager::CreateAsset<Material>(blinnShader);
+		{
+			treeMat->Name = "Tree-Mat";
+			treeMat->Set("u_Material.Diffuse", TreeTex);
+			treeMat->Set("u_Material.Shininess", 1.0f);
+		}
+
+		Material::Sptr brownMat = ResourceManager::CreateAsset<Material>(blinnShader);
+		{
+			brownMat->Name = "Branch-Mat";
+			brownMat->Set("u_Material.Diffuse", BrownTex);
+			brownMat->Set("u_Material.Shininess", 1.0f);
 		}
 
 		/// <summary>
@@ -343,6 +363,9 @@ void DefaultSceneLayer::_CreateScene()
 
 		GameObject::Sptr rock1 = scene->CreateGameObject("Rock1");
 		{
+			rock1->SetPostion(glm::vec3(0.0f,0.0f,0.0f));
+			rock1->SetScale(glm::vec3(1.0f, 1.0f, 1.0f));
+
 			RenderComponent::Sptr renderer = rock1->Add<RenderComponent>();
 			renderer->SetMesh(rock1Mesh);
 			renderer->SetMaterial(rockMat);
@@ -351,13 +374,81 @@ void DefaultSceneLayer::_CreateScene()
 			physics->AddCollider(ConvexMeshCollider::Create());
 		}
 
+		GameObject::Sptr tree1 = scene->CreateGameObject("Tree1");
+		{
+			tree1->SetPostion(glm::vec3(10.0f, 7.5f, 0.0f));
+			tree1->SetScale(glm::vec3(10.0f, 10.0f, 10.0f));
+
+			RenderComponent::Sptr renderer = tree1->Add<RenderComponent>();
+			renderer->SetMesh(tree1Mesh);
+			renderer->SetMaterial(treeMat);
+
+			RigidBody::Sptr physics = tree1->Add<RigidBody>();
+			physics->AddCollider(ConvexMeshCollider::Create());
+		}
+
 		GameObject::Sptr branch1 = scene->CreateGameObject("Branch1");
 		{
+			branch1->SetPostion(glm::vec3(5.0f, 5.0f, 0.0f));
+			branch1->SetScale(glm::vec3(1.0f, 1.0f, 1.0f));
+
 			RenderComponent::Sptr renderer = branch1->Add<RenderComponent>();
 			renderer->SetMesh(branch1Mesh);
-			renderer->SetMaterial(rockMat);
+			renderer->SetMaterial(brownMat);
 
 			RigidBody::Sptr physics = branch1->Add<RigidBody>();
+			physics->AddCollider(ConvexMeshCollider::Create());
+		}
+
+		GameObject::Sptr branch2 = scene->CreateGameObject("Branch2");
+		{
+			branch2->SetPostion(glm::vec3(9.0f, 0.0f, 0.0f));
+			branch2->SetScale(glm::vec3(1.0f, 1.0f, 1.0f));
+
+			RenderComponent::Sptr renderer = branch2->Add<RenderComponent>();
+			renderer->SetMesh(branch1Mesh);
+			renderer->SetMaterial(brownMat);
+
+			RigidBody::Sptr physics = branch2->Add<RigidBody>();
+			physics->AddCollider(ConvexMeshCollider::Create());
+		}
+
+		GameObject::Sptr branch3 = scene->CreateGameObject("Branch3");
+		{
+			branch3->SetPostion(glm::vec3(-9.0f, 0.0f, 0.0f));
+			branch3->SetScale(glm::vec3(1.1f, 1.1f, 1.1f));
+
+			RenderComponent::Sptr renderer = branch3->Add<RenderComponent>();
+			renderer->SetMesh(branch1Mesh);
+			renderer->SetMaterial(brownMat);
+
+			RigidBody::Sptr physics = branch3->Add<RigidBody>();
+			physics->AddCollider(ConvexMeshCollider::Create());
+		}
+
+		GameObject::Sptr branch4 = scene->CreateGameObject("Branch4");
+		{
+			branch4->SetPostion(glm::vec3(0.0f, 9.0f, 0.0f));
+			branch4->SetScale(glm::vec3(1.3f, 1.3f, 1.3f));
+
+			RenderComponent::Sptr renderer = branch4->Add<RenderComponent>();
+			renderer->SetMesh(branch1Mesh);
+			renderer->SetMaterial(brownMat);
+
+			RigidBody::Sptr physics = branch4->Add<RigidBody>();
+			physics->AddCollider(ConvexMeshCollider::Create());
+		}
+
+		GameObject::Sptr branch5 = scene->CreateGameObject("Branch5");
+		{
+			branch5->SetPostion(glm::vec3(0.0f, -9.0f, 0.0f));
+			branch5->SetScale(glm::vec3(1.5f, 1.5f, 1.5f));
+
+			RenderComponent::Sptr renderer = branch5->Add<RenderComponent>();
+			renderer->SetMesh(branch1Mesh);
+			renderer->SetMaterial(brownMat);
+
+			RigidBody::Sptr physics = branch5->Add<RigidBody>();
 			physics->AddCollider(ConvexMeshCollider::Create());
 		}
 
@@ -401,7 +492,7 @@ void DefaultSceneLayer::_CreateScene()
 
 		GameObject::Sptr mainChara = scene->CreateGameObject("PACMAN");
 		{
-			mainChara->SetPostion(glm::vec3(0.0f, 0.0f, 0.0f));
+			mainChara->SetPostion(glm::vec3(0.0f, 0.0f, 1.5f));
 			mainChara->SetRotation(glm::vec3(90.0f, 0.0f, 0.0f));
 
 			mainChara->Add<JumpBehaviour>();
@@ -476,11 +567,12 @@ void DefaultSceneLayer::_CreateScene()
 
 		GameObject::Sptr goal = scene->CreateGameObject("Point For GOAL");
 		{
-			goal->SetPostion(glm::vec3(-15.0f, -15.0f, 3.0f));
-			goal->SetScale(glm::vec3(1.0f, 1.0f, 1.0f));
+			goal->SetPostion(glm::vec3(30.0f, 0.0f, 3.0f));
+			goal->SetScale(glm::vec3(3.0f, 3.0f, 3.0f));
+			goal->SetRotation(glm::vec3(0.0f, -90.0f, 0.0f));
 
 			RenderComponent::Sptr renderer = goal->Add<RenderComponent>();
-			renderer->SetMesh(goalMesh);
+			renderer->SetMesh(coin1Mesh);
 			renderer->SetMaterial(goalTextureMat);
 
 			TriggerVolume::Sptr volume = goal->Add<TriggerVolume>();
