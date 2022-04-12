@@ -247,6 +247,11 @@ void ParticleSystem::AddEmitter(const ParticleData& emitter)
 	_needsUpload = true;
 }
 
+std::vector<ParticleSystem::ParticleData> ParticleSystem::GetEmitters()
+{
+	return _emitters;
+}
+
 void ParticleSystem::RenderImGui()
 {
 	LABEL_LEFT(ImGui::LabelText, "Particle Count", "%u", _numParticles);
