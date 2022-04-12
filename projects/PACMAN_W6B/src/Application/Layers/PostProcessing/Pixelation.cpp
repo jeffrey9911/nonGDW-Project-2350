@@ -33,6 +33,7 @@ void Pixelation::RenderImGui()
 Pixelation::Sptr Pixelation::FromJson(const nlohmann::json& data)
 {
 	Pixelation::Sptr result = std::make_shared<Pixelation>();
+	result->Enabled = JsonGet(data, "enabled", true);
 	return result;
 }
 

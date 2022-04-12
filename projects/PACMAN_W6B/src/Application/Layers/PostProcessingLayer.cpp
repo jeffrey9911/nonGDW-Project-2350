@@ -41,7 +41,16 @@ void PostProcessingLayer::OnAppLoad(const nlohmann::json& config)
 	_effects.push_back(std::make_shared<Pixelation>());
 	_effects.push_back(std::make_shared<NightVision>());
 
+	GetEffect<ColorCorrectionEffect>()->Enabled = false;
+	GetEffect<BoxFilter3x3>()->Enabled = false;
+	GetEffect<BoxFilter5x5>()->Enabled = false;
 	GetEffect<OutlineEffect>()->Enabled = false;
+	GetEffect<DepthOfField>()->Enabled = false;
+	GetEffect<Blooming>()->Enabled = false;
+	GetEffect<Pixelation>()->Enabled = false;
+	GetEffect<NightVision>()->Enabled = false;
+
+
 
 	Application& app = Application::Get();
 	const glm::uvec4& viewport = app.GetPrimaryViewport();

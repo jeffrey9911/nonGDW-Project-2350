@@ -36,6 +36,7 @@ void Blooming::RenderImGui()
 Blooming::Sptr Blooming::FromJson(const nlohmann::json& data)
 {
 	Blooming::Sptr result = std::make_shared<Blooming>();
+	result->Enabled = JsonGet(data, "enabled", true);
 	return result;
 }
 

@@ -35,7 +35,9 @@ void NightVision::RenderImGui()
 
 NightVision::Sptr NightVision::FromJson(const nlohmann::json& data)
 {
-	return NightVision::Sptr();
+	NightVision::Sptr result = std::make_shared<NightVision>();
+	result->Enabled = JsonGet(data, "enabled", true);
+	return result;
 }
 
 nlohmann::json NightVision::ToJson() const
