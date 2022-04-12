@@ -23,7 +23,7 @@ BoxFilter5x5::BoxFilter5x5() :
 
 BoxFilter5x5::~BoxFilter5x5() = default;
 
-void BoxFilter5x5::Apply(const Framebuffer::Sptr& gBuffer)
+void BoxFilter5x5::Apply(const Framebuffer::Sptr& gBuffer, const Framebuffer::Sptr& lBuffer)
 {
 	_shader->Bind();
 	_shader->SetUniform("u_Filter", Filter, 25);

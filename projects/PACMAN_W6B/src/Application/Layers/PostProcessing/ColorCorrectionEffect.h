@@ -12,7 +12,7 @@ public:
 	ColorCorrectionEffect(bool defaultLut);
 	virtual ~ColorCorrectionEffect();
 
-	virtual void Apply(const Framebuffer::Sptr& gBuffer) override;
+	virtual void Apply(const Framebuffer::Sptr& gBuffer, const Framebuffer::Sptr& lBuffer) override;
 	virtual void RenderImGui() override;
 
 	// Inherited from IResource
@@ -22,6 +22,13 @@ public:
 
 protected:
 	ShaderProgram::Sptr _shader;
+
+	Texture3D::Sptr lut_coo;
+	Texture3D::Sptr lut_war;
+	Texture3D::Sptr lut_cus;
+	Texture3D::Sptr lut_ori;
+
+
 	float _strength;
 };
 

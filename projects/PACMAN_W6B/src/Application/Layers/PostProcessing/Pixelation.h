@@ -2,25 +2,22 @@
 #include "Application/Layers/PostProcessingLayer.h"
 #include "Graphics/ShaderProgram.h"
 #include "Graphics/Textures/Texture3D.h"
-#include "Graphics/Framebuffer.h"
 
-class BoxFilter3x3 : public PostProcessingLayer::Effect {
+class Pixelation : public PostProcessingLayer::Effect {
 public:
-	MAKE_PTRS(BoxFilter3x3);
-	float Filter[9];
+	MAKE_PTRS(Pixelation);
 
-	BoxFilter3x3();
-	virtual ~BoxFilter3x3();
+	Pixelation();
+	virtual ~Pixelation();
 
 	virtual void Apply(const Framebuffer::Sptr& gBuffer, const Framebuffer::Sptr& lBuffer) override;
 	virtual void RenderImGui() override;
 
-	// Inherited from IResource
-
-	BoxFilter3x3::Sptr FromJson(const nlohmann::json& data);
+	Pixelation::Sptr FromJson(const nlohmann::json& data);
 	virtual nlohmann::json ToJson() const override;
 
 protected:
 	ShaderProgram::Sptr _shader;
+	
+	float _amount;
 };
-

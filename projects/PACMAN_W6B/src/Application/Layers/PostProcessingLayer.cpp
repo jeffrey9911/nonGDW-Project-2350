@@ -8,6 +8,9 @@
 #include "PostProcessing/BoxFilter5x5.h"
 #include "PostProcessing/OutlineEffect.h"
 #include "PostProcessing/DepthOfField.h"
+#include "PostProcessing/Blooming.h"
+#include "PostProcessing/Pixelation.h"
+#include "PostProcessing/NightVision.h"
 
 PostProcessingLayer::PostProcessingLayer() :
 	ApplicationLayer()
@@ -34,6 +37,9 @@ void PostProcessingLayer::OnAppLoad(const nlohmann::json& config)
 	_effects.push_back(std::make_shared<BoxFilter5x5>());
 	_effects.push_back(std::make_shared<OutlineEffect>());
 	_effects.push_back(std::make_shared<DepthOfField>());
+	_effects.push_back(std::make_shared<Blooming>());
+	_effects.push_back(std::make_shared<Pixelation>());
+	_effects.push_back(std::make_shared<NightVision>());
 
 	GetEffect<OutlineEffect>()->Enabled = false;
 
@@ -74,6 +80,7 @@ void PostProcessingLayer::OnPostRender()
 	const RenderLayer::Sptr& renderer = app.GetLayer<RenderLayer>();
 	const Framebuffer::Sptr& output = renderer->GetRenderOutput();
 	const Framebuffer::Sptr& gBuffer = renderer->GetGBuffer();
+	const Framebuffer::Sptr& lBuffer = renderer->GetLightingBuffer();
 
 	// Stores the input FBO to the effect, we start with the renderlayer's output 
 	Framebuffer::Sptr current = output;
@@ -98,7 +105,7 @@ void PostProcessingLayer::OnPostRender()
 			current->BindAttachment(RenderTargetAttachment::Color0, 0);
 
 			// Apply the effect and render the fullscreen quad
-			effect->Apply(gBuffer);
+			effect->Apply(gBuffer, lBuffer);
 			_quadVAO->Draw();
 
 			// Unbind output and set it as input for next pass

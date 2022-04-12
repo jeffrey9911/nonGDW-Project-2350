@@ -24,7 +24,7 @@ BoxFilter3x3::BoxFilter3x3() :
 
 BoxFilter3x3::~BoxFilter3x3() = default;
 
-void BoxFilter3x3::Apply(const Framebuffer::Sptr& gBuffer)
+void BoxFilter3x3::Apply(const Framebuffer::Sptr& gBuffer, const Framebuffer::Sptr& lBuffer)
 {
 	_shader->Bind(); 
 	_shader->SetUniform("u_Filter", Filter, 9); 
