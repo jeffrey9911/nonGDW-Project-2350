@@ -11,4 +11,5 @@ if you come in contact with the car you lose and both will reset position.
 
 Movement: W - forward, A - left, S - backward, D - right
 
+3rd Party Models: Car Model was created from Jeffrey Li Midterm Group which is used in this game.
 
