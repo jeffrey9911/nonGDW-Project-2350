@@ -722,8 +722,8 @@ void DefaultSceneLayer::_CreateScene()
 
 		GameObject::Sptr goal = scene->CreateGameObject("Point For GOAL");
 		{
-			goal->SetPostion(glm::vec3(30.0f, 0.0f, 3.0f));
-			goal->SetScale(glm::vec3(3.0f, 3.0f, 3.0f));
+			goal->SetPostion(glm::vec3(30.0f, 0.0f, 1.5f));
+			goal->SetScale(glm::vec3(1.0f, 1.0f, 1.0f)); // do size 3,3,3 if want big and set position of Z to 3 to see it corretly.
 			goal->SetRotation(glm::vec3(0.0f, -90.0f, 0.0f));
 
 			RenderComponent::Sptr renderer = goal->Add<RenderComponent>();
@@ -1044,7 +1044,21 @@ void DefaultSceneLayer::_CreateScene()
 			canvas->AddChild(subPanel);
 		}
 		
+		*/
+		// Shadow Light - currently semi working base on light - light need to be fixed to not go random and shouldn't move unless bigger range and etc.
+		GameObject::Sptr shadowCaster = scene->CreateGameObject("Shadow Light");
+		{
+			// Set position in the scene
+			shadowCaster->SetPostion(glm::vec3(50.0f, 50.0f, 50.0f));
+			shadowCaster->SetRotation(glm::vec3(84.318f, -90.0f, 157.0f));
+			shadowCaster->LookAt(glm::vec3(0.0f));
 
+			// Create and attach a renderer for the monkey
+			ShadowCamera::Sptr shadowCam = shadowCaster->Add<ShadowCamera>();
+			shadowCam->SetProjection(glm::perspective(glm::radians(120.0f), 1.0f, 0.1f, 100.0f));
+		}
+
+		//Particles that spawn at set location center.
 		GameObject::Sptr particles = scene->CreateGameObject("Particles"); 
 		{
 			particles->SetPostion({ -2.0f, 0.0f, 2.0f });
@@ -1066,7 +1080,7 @@ void DefaultSceneLayer::_CreateScene()
 
 			particleManager->AddEmitter(emitter);
 		}
-		*/
+		
 #pragma endregion
 		GuiBatcher::SetDefaultTexture(ResourceManager::CreateAsset<Texture2D>("textures/ui-sprite.png"));
 		GuiBatcher::SetDefaultBorderRadius(8);
