@@ -38,13 +38,13 @@ void InstancedRenderingTestLayer::OnSceneLoad() {
 	};
 
 	// Load a file to get the base VAO, then add the instanced buffers
-	_vao = ObjLoader::LoadFromFile("objs/rocks/rock1.obj");
+	_vao = ObjLoader::LoadFromFile("monkey.obj");
 	_vao->AddVertexBuffer(_instanceBuffer, instancedParams, true);
 
 	// Load our instanced shader
 	_shader = ShaderProgram::Create();
-	_shader->LoadShaderPartFromFile("shaders/vertex_shaders/basic_instanced.glsl", ShaderPartType::Vertex);  
-	_shader->LoadShaderPartFromFile("shaders/fragment_shaders/frag_blinn_phong_textured.glsl", ShaderPartType::Fragment);
+	_shader->LoadShaderPartFromFile("shaders/vertex_shaders/basic_instanced.glsl", ShaderPartType::Vertex); 
+	_shader->LoadShaderPartFromFile("shaders/fragment_shaders/frag_environment_mirror.glsl", ShaderPartType::Fragment);
 	_shader->Link();
 
 

@@ -1,7 +1,12 @@
 #define GLM_SWIZZLE 
 #include "Application/Application.h"
 
-int main(int argc, char** args) {
+extern "C" {
+	__declspec(dllexport) unsigned long NvOptimusEnablement = 0x01;
+	__declspec(dllexport) int AmdPowerXpressRequestHighPerformance = 0x01;
+}
+
+int main(int argc, char** args) { 
 	Logger::Init();
 
 	// TODO: parse arguments?

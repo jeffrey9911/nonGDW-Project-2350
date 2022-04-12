@@ -39,13 +39,13 @@ void main() {
 	// Normalize our input normal
 	vec3 normal = normalize(inNormal);
 
-	vec3 toEye = normalize(u_CamPos.xyz - inViewPos);
+	vec3 toEye = normalize(u_CamPos.xyz - inWorldPos);
 	vec3 environmentDir = reflect(-toEye, normal);
 	vec3 reflected = SampleEnvironmentMap(environmentDir);
 
 	// Will accumulate the contributions of all lights on this fragment
 	// This is defined in the fragment file "multiple_point_lights.glsl"
-	vec3 lightAccumulation = CalcAllLightContribution(inViewPos, normal, u_CamPos.xyz, u_Material.Shininess);
+	vec3 lightAccumulation = CalcAllLightContribution(inWorldPos, normal, u_CamPos.xyz, u_Material.Shininess);
 
 	// Get the albedo from the diffuse / albedo map
 	vec4 textureColor = texture(u_Material.Diffuse, inUV);
