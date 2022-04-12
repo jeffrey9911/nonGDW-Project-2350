@@ -10,6 +10,7 @@ Rules: Collect coins (beta version), in this game you collect one coin and you w
 if you come in contact with the car you lose and both will reset position.
 
 Movement: W - forward, A - left, S - backward, D - right
+Toggles: We are using Imgui for shadow, post-processing, particle effects. 
 
 acknowledgements:
 
