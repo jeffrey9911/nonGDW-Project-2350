@@ -24,6 +24,8 @@ public:
 		glm::mat4 u_View;
 		// The camera's projection matrix
 		glm::mat4 u_Projection;
+		// Inverse of the camera's projection
+		glm::mat4 u_InvProjection;
 		// The combined viewProject matrix
 		glm::mat4 u_ViewProjection;
 		// The camera's position in world space
@@ -34,6 +36,21 @@ public:
 		float u_DeltaTime;
 		// Bitfield representing up to 32 bool values to enable/disable stuff
 		RenderFlags u_RenderFlags;
+		float u_ZNear;
+		float u_ZFar;
+
+		// NEW FOR DOF
+		// 
+		// Distance to focus camera to in world units
+		float u_FocalDepth = 5.0f;
+		// Distance from lense to sensor in world units
+		float u_LensDepth = 0.1f;
+		// Aperture (inverse of F-Stop)
+		float u_Aperture = 20.0f;
+
+		glm::vec4 u_Viewport;
+
+
 	};
 
 	// Structure for our instance-level uniforms, matches layout from
@@ -94,6 +111,10 @@ public:
 	RenderFlags GetRenderFlags() const;
 
 	const Framebuffer::Sptr& GetLightingBuffer() const;
+	const Framebuffer::Sptr& GetRenderOutput() const;
+	const Framebuffer::Sptr& GetGBuffer() const;
+
+	const UniformBuffer<FrameLevelUniforms>::Sptr& GetFrameUniforms() const;
 
 	// Inherited from ApplicationLayer
 
@@ -102,15 +123,17 @@ public:
 	virtual void OnRender(const Framebuffer::Sptr& prevLayer) override;
 	virtual void OnPostRender() override;
 	virtual void OnWindowResize(const glm::ivec2& oldSize, const glm::ivec2& newSize) override;
-	virtual Framebuffer::Sptr GetRenderOutput() override;
 
 protected:
 	Framebuffer::Sptr   _primaryFBO;
 	Framebuffer::Sptr   _lightingFBO;
 	Framebuffer::Sptr   _outputBuffer;
+
 	ShaderProgram::Sptr _clearShader;
 	ShaderProgram::Sptr _lightAccumulationShader;
 	ShaderProgram::Sptr _compositingShader;
+	ShaderProgram::Sptr _shadowShader;
+
 	VertexArrayObject::Sptr _fullscreenQuad;
 
 	bool              _blitFbo;
@@ -125,6 +148,9 @@ protected:
 
 	const int LIGHTING_UBO_BINDING = 2;
 	UniformBuffer<LightingUboStruct>::Sptr _lightingUbo;
+
+	void _InitFrameUniforms();
+	void _RenderScene(const glm::mat4& view, const glm::mat4&Projection, const glm::ivec2& screenSize);
 
 	void _AccumulateLighting();
 	void _Composite();

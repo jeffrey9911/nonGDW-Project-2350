@@ -1,6 +1,6 @@
 #version 410
 
-layout(location = 0) in vec3 inColor;
+layout(location = 1) in vec3 inColor;
 
 out vec4 frag_color;
 

@@ -25,8 +25,7 @@ void SimpleCameraControl::Update(float deltaTime)
 {
 	if (Application::Get().IsFocused) {
 		if (InputEngine::GetMouseState(GLFW_MOUSE_BUTTON_LEFT) == ButtonState::Pressed) {
-			_prevMousePos = InputEngine::GetMousePos();
-			LOG_INFO("doot");
+			_prevMousePos = InputEngine::GetMousePos();   
 		}
 
 		if (InputEngine::IsMouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)) {
@@ -80,6 +79,9 @@ void SimpleCameraControl::RenderImGui()
 	LABEL_LEFT(ImGui::DragFloat2, "Mouse Sensitivity", &_mouseSensitivity.x, 0.01f);
 	LABEL_LEFT(ImGui::DragFloat3, "Move Speed       ", &_moveSpeeds.x, 0.01f, 0.01f);
 	LABEL_LEFT(ImGui::DragFloat , "Shift Multiplier ", &_shiftMultipler, 0.01f, 1.0f);
+	ImGui::Text((~InputEngine::GetMouseState(GLFW_MOUSE_BUTTON_LEFT)).c_str());
+	glm::dvec2 delta = InputEngine::GetMousePos() - _prevMousePos;
+	ImGui::Text("%d, %d", delta.x, delta.y);
 }
 
 nlohmann::json SimpleCameraControl::ToJson() const {

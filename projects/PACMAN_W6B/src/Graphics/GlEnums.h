@@ -29,14 +29,17 @@ ENUM(TextureType, GLenum,
 	_2D            = GL_TEXTURE_2D,
 	_3D            = GL_TEXTURE_3D,
 	Cubemap        = GL_TEXTURE_CUBE_MAP,
-	_2DMultisample = GL_TEXTURE_2D_MULTISAMPLE
+	_2DMultisample = GL_TEXTURE_2D_MULTISAMPLE,
+	_2DArray = GL_TEXTURE_2D_ARRAY
 )
 
 // https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glTexImage2D.xhtml
 // These are some of our more common available internal formats
 ENUM(InternalFormat, GLint,
 	Unknown      = GL_NONE,
-	Depth        = GL_DEPTH_COMPONENT,
+	Depth16		 = GL_DEPTH_COMPONENT16,
+	Depth24		 = GL_DEPTH_COMPONENT24,
+	Depth32		 = GL_DEPTH_COMPONENT32,
 	DepthStencil = GL_DEPTH_STENCIL,
 	R8           = GL_R8,
 	R16          = GL_R16,
