@@ -20,6 +20,7 @@
 #include "Graphics/ShaderProgram.h"
 #include "Graphics/Textures/Texture1D.h"
 #include "Graphics/Textures/Texture2D.h"
+#include "Graphics/Textures/Texture2DArray.h"
 #include "Graphics/Textures/Texture3D.h"
 #include "Graphics/Textures/TextureCube.h"
 #include "Graphics/VertexTypes.h"
@@ -43,6 +44,8 @@
 #include "Gameplay/Components/SimpleCameraControl.h"
 #include "Gameplay/Components/ParticleSystem.h"
 #include "Gameplay/Components/Light.h"
+#include "Gameplay/Components/ShadowCamera.h"
+#include "Gameplay/Components/ShipMoveBehaviour.h"
 
 #include "Gameplay/Components/SimpleObjectControl.h"
 #include "Gameplay/Components/SimpleCameraFollow.h"
@@ -66,12 +69,13 @@
 #include "Layers/ImGuiDebugLayer.h"
 #include "Layers/InstancedRenderingTestLayer.h"
 #include "Layers/ParticleLayer.h"
+#include "Layers/PostProcessingLayer.h"
 
 Application* Application::_singleton = nullptr;
 std::string Application::_applicationName = "INFR-2350U - DEMO";
 
-#define DEFAULT_WINDOW_WIDTH 1920
-#define DEFAULT_WINDOW_HEIGHT 1080
+#define DEFAULT_WINDOW_WIDTH 1280
+#define DEFAULT_WINDOW_HEIGHT 720
 
 Application::Application() :
 	_window(nullptr),
@@ -80,8 +84,7 @@ Application::Application() :
 	_isEditor(true),
 	_windowTitle("INFR - 2350U"),
 	_currentScene(nullptr),
-	_targetScene(nullptr),
-	_renderOutput(nullptr)
+	_targetScene(nullptr)
 { }
 
 Application::~Application() = default; 
@@ -155,17 +158,18 @@ void Application::_Run()
 {
 	// TODO: Register layers
 	_layers.push_back(std::make_shared<GLAppLayer>());
-	_layers.push_back(std::make_shared<DefaultSceneLayer>());
 	_layers.push_back(std::make_shared<LogicUpdateLayer>());
 	_layers.push_back(std::make_shared<RenderLayer>());
-	//_layers.push_back(std::make_shared<ParticleLayer>());
-	//_layers.push_back(std::make_shared<InstancedRenderingTestLayer>());
+	_layers.push_back(std::make_shared<ParticleLayer>());
+	_layers.push_back(std::make_shared<PostProcessingLayer>());
 	_layers.push_back(std::make_shared<InterfaceLayer>());
 
 	// If we're in editor mode, we add all the editor layers
 	if (_isEditor) {
 		_layers.push_back(std::make_shared<ImGuiDebugLayer>());
 	}
+
+	_layers.push_back(std::make_shared<DefaultSceneLayer>());
 
 	// Either load the settings, or use the defaults
 	_ConfigureSettings();
@@ -257,6 +261,7 @@ void Application::_RegisterClasses()
 	// Register all our resource types so we can load them from manifest files
 	ResourceManager::RegisterType<Texture1D>();
 	ResourceManager::RegisterType<Texture2D>();
+	ResourceManager::RegisterType<Texture2DArray>();
 	ResourceManager::RegisterType<Texture3D>();
 	ResourceManager::RegisterType<TextureCube>();
 	ResourceManager::RegisterType<ShaderProgram>();
@@ -280,6 +285,8 @@ void Application::_RegisterClasses()
 	ComponentManager::RegisterType<GuiText>();
 	ComponentManager::RegisterType<ParticleSystem>();
 	ComponentManager::RegisterType<Light>();
+	ComponentManager::RegisterType<ShadowCamera>();
+	ComponentManager::RegisterType<ShipMoveBehaviour>();
 
 	ComponentManager::RegisterType<SimpleObjectControl>();
 	ComponentManager::RegisterType<SimpleCameraFollow>();
@@ -345,17 +352,13 @@ void Application::_RenderScene() {
 	for (const auto& layer : _layers) {
 		if (layer->Enabled && *(layer->Overrides & AppLayerFunctions::OnRender)) {
 			layer->OnRender(result);
-			Framebuffer::Sptr layerResult = layer->GetRenderOutput(); 
-			result = layerResult != nullptr ? layerResult : result;
 		}
 	}
-	_renderOutput = result;
-
 }
 
 void Application::_PostRender() {
 	// Note that we use a reverse iterator for post render
-	for (auto it = _layers.crbegin(); it != _layers.crend(); it++) {
+	for (auto it = _layers.begin(); it != _layers.end(); it++) {
 		const auto& layer = *it;
 		if (layer->Enabled && *(layer->Overrides & AppLayerFunctions::OnPostRender)) {
 			layer->OnPostRender();
