@@ -23,7 +23,12 @@ public:
 
 	Gameplay::GameObject::Sptr _shaderContainer;
 	int toggleMode;
-	
+	// 0 = Light:on/off light
+	// 1 = GOBJ:GEN
+	// 2 = GOBJ:AB EXSPEC
+	// 3 = GOBJ:SPEC EXAB
+	// 4 = Shadow Caster
+	// 9 = on/off texture
 
 
 	virtual void Update(float deltaTime) override;
@@ -39,6 +44,9 @@ protected:
 	float _cdTimer;
 	RenderComponent::Sptr _renderer;
 	ShaderProgram::Sptr _shaderToStore;
-	Texture3D::Sptr _lutToStore;
+
+	bool isLightOn;
+	bool isTextureOn;
 	bool isToggleOn;
+	
 };

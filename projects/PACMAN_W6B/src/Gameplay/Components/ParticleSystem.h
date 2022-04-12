@@ -83,6 +83,8 @@ public:
 
 	void AddEmitter(const ParticleData& emitter);
 
+	std::vector<ParticleData> GetEmitters();
+
 	// Inherited from IComponent
 
 	virtual void RenderImGui() override;

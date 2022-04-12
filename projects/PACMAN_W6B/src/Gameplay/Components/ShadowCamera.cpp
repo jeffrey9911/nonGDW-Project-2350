@@ -9,13 +9,13 @@
 ShadowCamera::ShadowCamera() :
 	Flags(ShadowFlags::None),
 	Bias(0.00001f),
-	NormalBias(0.0001f),
+	NormalBias(0.000001f),
 	Intensity(1.0f),
 	Range(100.0f),
 	_depthBuffer(nullptr),
 	_projectionMask(nullptr),
 	_color(glm::vec4(1.0f)),
-	_bufferResolution(glm::ivec2(512)), 
+	_bufferResolution(glm::ivec2(16384)), 
 	_projectionMatrix(glm::perspective(glm::radians(90.0f), 1.0f, 0.1f, 100.0f))
 { }
 
