@@ -20,14 +20,19 @@ ColorCorrectionEffect::ColorCorrectionEffect(bool defaultLut) :
 		{ ShaderPartType::Fragment, "shaders/fragment_shaders/post_effects/color_correction.glsl" }
 	});
 
+	lut_ori = ResourceManager::CreateAsset<Texture3D>("luts/cool.cube");
+	lut_coo = ResourceManager::CreateAsset<Texture3D>("luts/COOL_LUT.CUBE");
+	lut_war = ResourceManager::CreateAsset<Texture3D>("luts/WARM_LUT.CUBE");
+	lut_cus = ResourceManager::CreateAsset<Texture3D>("luts/CUS_LUT.CUBE");
+
 	if (defaultLut) {
-		Lut = ResourceManager::CreateAsset<Texture3D>("luts/cool.cube");
+		Lut = lut_ori;
 	}
 }
 
 ColorCorrectionEffect::~ColorCorrectionEffect() = default;
 
-void ColorCorrectionEffect::Apply(const Framebuffer::Sptr& gBuffer)
+void ColorCorrectionEffect::Apply(const Framebuffer::Sptr& gBuffer, const Framebuffer::Sptr& lBuffer)
 {
 	_shader->Bind();
 	Lut->Bind(1);
@@ -36,6 +41,25 @@ void ColorCorrectionEffect::Apply(const Framebuffer::Sptr& gBuffer)
 
 void ColorCorrectionEffect::RenderImGui()
 {
+	if (ImGui::Button("Apply Original Lut"))
+	{
+		Lut = lut_ori;
+	}
+
+	if (ImGui::Button("Apply Cool Lut"))
+	{
+		Lut = lut_coo;
+	}
+
+	if (ImGui::Button("Apply Warm Lut"))
+	{
+		Lut = lut_war;
+	}
+
+	if (ImGui::Button("Apply Custom Lut"))
+	{
+		Lut = lut_cus;
+	}
 	LABEL_LEFT(ImGui::LabelText, "LUT", Lut ? Lut->GetDebugName().c_str() : "none");
 	LABEL_LEFT(ImGui::SliderFloat, "Strength", &_strength, 0, 1);
 }

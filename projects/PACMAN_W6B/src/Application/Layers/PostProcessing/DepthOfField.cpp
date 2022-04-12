@@ -20,7 +20,7 @@ DepthOfField::DepthOfField() :
 
 DepthOfField::~DepthOfField() = default;
 
-void DepthOfField::Apply(const Framebuffer::Sptr& gBuffer)
+void DepthOfField::Apply(const Framebuffer::Sptr& gBuffer, const Framebuffer::Sptr& lBuffer)
 {
 	_shader->Bind();
 	gBuffer->BindAttachment(RenderTargetAttachment::Depth, 1);
