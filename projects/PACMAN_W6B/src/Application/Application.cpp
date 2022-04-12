@@ -54,6 +54,9 @@
 #include "Gameplay/Components/SimpleLightFollow.h"
 #include "Gameplay/Components/SimpleToggle.h"
 #include "Gameplay/Components/ShaderContainer.h"
+#include "Gameplay/Components/DuoPlayerCamera.h"
+#include "Gameplay/Components/SimpleParticleFollow.h"
+
 
 // GUI
 #include "Gameplay/Components/GUI/RectTransform.h"
@@ -295,6 +298,8 @@ void Application::_RegisterClasses()
 	ComponentManager::RegisterType<SimpleLightFollow>();
 	ComponentManager::RegisterType<SimpleToggle>();
 	ComponentManager::RegisterType<ShaderContainer>();
+	ComponentManager::RegisterType<DuoPlayerCamera>();
+	ComponentManager::RegisterType<SimpleParticleFollow>();
 }
 
 void Application::_Load() {

@@ -36,7 +36,7 @@ uniform Material u_Material;
 //https://learnopengl.com/Advanced-Lighting/Advanced-Lighting
 void main() {
 
-	vec4 textureColor = texture(u_Material.Diffuse, inUV);
+	//vec4 textureColor = texture(u_Material.Diffuse, inUV);
 
-	frag_color = textureColor;
+	frag_color = vec4(1);
 }

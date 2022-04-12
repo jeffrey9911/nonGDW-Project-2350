@@ -26,9 +26,12 @@
 #include "Gameplay/Material.h"
 #include "Gameplay/Components/RenderComponent.h"
 #include "Gameplay/Components/ShaderContainer.h"
+#include "Gameplay/Components/ShadowCamera.h"
 
 SimpleToggle::SimpleToggle() :
 	IComponent(),
+	isLightOn(true),
+	isTextureOn(true),
 	isToggleOn(false)
 { }
 
@@ -38,11 +41,10 @@ void SimpleToggle::Awake()
 {
 	_cdTimer = 0.0f;
 	_renderer = GetComponent<RenderComponent>();
-	if (_renderer != NULL)
+	if (_renderer != nullptr)
 	{
 		_shaderToStore = _renderer->GetMaterial()->GetShader();
 	}
-	_lutToStore = GetGameObject()->GetScene()->GetColorLUT();
 }
 
 void SimpleToggle::Update(float deltaTime)
@@ -56,6 +58,7 @@ void SimpleToggle::Update(float deltaTime)
 		{
 			if (_cdTimer <= 0.0f)
 			{
+				//Disable Light Calculation
 				if (isToggleOn == false)
 				{
 					if (_renderer != NULL)
@@ -167,74 +170,73 @@ void SimpleToggle::Update(float deltaTime)
 		{
 			if (_cdTimer <= 0.0f)
 			{
-				if (isToggleOn == false)
-				{
-					GetGameObject()->GetScene()->SetColorLUT(_shaderContainer->Get<ShaderContainer>()->getD3TexByName("LUT_WARM"));
-				}
-				else
-				{
-					GetGameObject()->GetScene()->SetColorLUT(_shaderContainer->Get<ShaderContainer>()->getD3TexByName("LUT_NORM"));
-				}
 				_cdTimer = 1.0f;
 			}
 		}
 
-		if (InputEngine::IsKeyDown(GLFW_KEY_9) && toggleMode == 0) // Color graing cool
+		if (InputEngine::IsKeyDown(GLFW_KEY_9)) // on/off texture
 		{
 			if (_cdTimer <= 0.0f)
 			{
-				if (isToggleOn == false)
+				if (toggleMode == 1 || toggleMode == 2 || toggleMode == 3)
 				{
-					GetGameObject()->GetScene()->SetColorLUT(_shaderContainer->Get<ShaderContainer>()->getD3TexByName("LUT_COOL"));
-				}
-				else
-				{
-					GetGameObject()->GetScene()->SetColorLUT(_shaderContainer->Get<ShaderContainer>()->getD3TexByName("LUT_NORM"));
+					if(isTextureOn)
+					{
+						_renderer->GetMaterial()->SwapShader(_shaderContainer->Get<ShaderContainer>()->getShaderByName("BASI"));
+						isTextureOn = false;
+					}
+					else
+					{
+						_renderer->GetMaterial()->SwapShader(_shaderToStore);
+						isTextureOn = true;
+					}
 				}
 				_cdTimer = 1.0f;
 			}
 		}
 
-		if (InputEngine::IsKeyDown(GLFW_KEY_0) && toggleMode == 0) // Color grading Custom
+		if (InputEngine::IsKeyDown(GLFW_KEY_0)) // on/off light
 		{
 			if (_cdTimer <= 0.0f)
 			{
-				if (isToggleOn == false)
+				if (isLightOn)
 				{
-					GetGameObject()->GetScene()->SetColorLUT(_shaderContainer->Get<ShaderContainer>()->getD3TexByName("LUT_CUS"));
+					if (toggleMode == 0)
+					{
+						GetGameObject()->Get<Light>()->IsEnabled = false;
+					}
+					if (toggleMode == 4)
+					{
+						GetGameObject()->Get<ShadowCamera>()->IsEnabled = false;
+					}
+					if (toggleMode == 1 || toggleMode == 2 || toggleMode == 3)
+					{
+						_renderer->GetMaterial()->SwapShader(_shaderContainer->Get<ShaderContainer>()->getShaderByName("BLIN"));
+					}
+					
+					isLightOn = false;
 				}
 				else
 				{
-					GetGameObject()->GetScene()->SetColorLUT(_shaderContainer->Get<ShaderContainer>()->getD3TexByName("LUT_NORM"));
+					if (toggleMode == 0)
+					{
+						GetGameObject()->Get<Light>()->IsEnabled = true;
+					}
+					if (toggleMode == 4)
+					{
+						GetGameObject()->Get<ShadowCamera>()->IsEnabled = true;
+					}
+					if (toggleMode == 1 || toggleMode == 2 || toggleMode == 3)
+					{
+						_renderer->GetMaterial()->SwapShader(_shaderToStore);
+					}
+					isLightOn = true;
 				}
+				
 				_cdTimer = 1.0f;
 			}
 		}
-
-		
 	}
-
-
-
-	
-
-	/*
-	if (toggleABL) 
-	{
-		if (GetGameObject()->Get<RenderComponent>() != NULL)
-		{
-			_matStore = GetGameObject()->Get<RenderComponent>()->GetMaterial();
-			GetGameObject()->Get<RenderComponent>()->SetMaterial(ambientLightMat);
-		}
-	}
-	else
-	{
-		if (GetGameObject()->Get<RenderComponent>() != NULL)
-		{
-			GetGameObject()->Get<RenderComponent>()->SetMaterial(_matStore);
-		}
-	}*/
-	
 }
 
 void SimpleToggle::RenderImGui()

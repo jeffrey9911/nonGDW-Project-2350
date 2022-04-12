@@ -57,6 +57,8 @@
 #include "Gameplay/Components/SimpleLightFollow.h"
 #include "Gameplay/Components/SimpleToggle.h"
 #include "Gameplay/Components/ShaderContainer.h"
+#include "Gameplay/Components/DuoPlayerCamera.h"
+#include "Gameplay/Components/SimpleParticleFollow.h"
 
 // Physics
 #include "Gameplay/Physics/RigidBody.h"
@@ -110,6 +112,7 @@ void DefaultSceneLayer::_CreateScene()
 	} else {
 		 
 		// Basic gbuffer generation with no vertex manipulation
+		/*
 		ShaderProgram::Sptr deferredForward = ResourceManager::CreateAsset<ShaderProgram>(std::unordered_map<ShaderPartType, std::string>{
 			{ ShaderPartType::Vertex, "shaders/vertex_shaders/basic.glsl" },
 			{ ShaderPartType::Fragment, "shaders/fragment_shaders/deferred_forward.glsl" }
@@ -143,6 +146,7 @@ void DefaultSceneLayer::_CreateScene()
 			{ ShaderPartType::Fragment, "shaders/fragment_shaders/cel_shader.glsl" }
 		});
 		celShader->SetDebugName("Cel Shader");
+*/
 
 		ShaderProgram::Sptr specShader = ResourceManager::CreateAsset<ShaderProgram>(std::unordered_map<ShaderPartType, std::string>{
 			{ ShaderPartType::Vertex, "shaders/vertex_shaders/basic.glsl" },
@@ -152,55 +156,52 @@ void DefaultSceneLayer::_CreateScene()
 
 		ShaderProgram::Sptr basicShader = ResourceManager::CreateAsset<ShaderProgram>(std::unordered_map<ShaderPartType, std::string>{
 			{ ShaderPartType::Vertex, "shaders/vertex_shaders/basic.glsl" },
-			{ ShaderPartType::Fragment, "shaders/my_frag/frag_noLight.glsl" }
+			{ ShaderPartType::Fragment, "shaders/my_frag/frag_nothing.glsl" }
 		});
-		specShader->SetDebugName("Basic Shader");
+		basicShader->SetDebugName("Basic Shader");
 
 		ShaderProgram::Sptr blinnShader = ResourceManager::CreateAsset<ShaderProgram>(std::unordered_map<ShaderPartType, std::string>{
 			{ ShaderPartType::Vertex, "shaders/vertex_shaders/basic.glsl" },
 			{ ShaderPartType::Fragment, "shaders/my_frag/frag_blinn_phong.glsl" }
 		});
-		specShader->SetDebugName("Blinn Phong Shader");
+		blinnShader->SetDebugName("Blinn Phong Shader");
 
 		ShaderProgram::Sptr toonShader = ResourceManager::CreateAsset<ShaderProgram>(std::unordered_map<ShaderPartType, std::string>{
 			{ ShaderPartType::Vertex, "shaders/vertex_shaders/basic.glsl" },
 			{ ShaderPartType::Fragment, "shaders/my_frag/frag_toon.glsl" }
 		});
-		specShader->SetDebugName("Toon Shader");
+		toonShader->SetDebugName("Toon Shader");
 
-		// Load in the meshes
-		MeshResource::Sptr monkeyMesh = ResourceManager::CreateAsset<MeshResource>("Monkey.obj");
-		MeshResource::Sptr shipMesh   = ResourceManager::CreateAsset<MeshResource>("fenrir.obj");
+		ShaderProgram::Sptr deferredShader = ResourceManager::CreateAsset<ShaderProgram>(std::unordered_map<ShaderPartType, std::string>{
+			{ ShaderPartType::Vertex, "shaders/vertex_shaders/basic.glsl" },
+			{ ShaderPartType::Fragment, "shaders/my_frag/frag_deferred.glsl" }
+		});
+		deferredShader->SetDebugName("Deferred - GBuffer Generation");
 
-		MeshResource::Sptr characterMesh = ResourceManager::CreateAsset<MeshResource>("objs/pacman/pacman.obj");
-		MeshResource::Sptr terrainMesh = ResourceManager::CreateAsset<MeshResource>("objs/ground/terrain.obj");
-
-		MeshResource::Sptr goalMesh = ResourceManager::CreateAsset<MeshResource>("objs/Coin.obj");
-		MeshResource::Sptr carMesh = ResourceManager::CreateAsset<MeshResource>("objs/Car.obj");
-		MeshResource::Sptr plainMesh = ResourceManager::CreateAsset<MeshResource>("objs/terrain/plainTerrain.obj");
-
-		MeshResource::Sptr rock1Mesh = ResourceManager::CreateAsset<MeshResource>("objs/rocks/rock1.obj");
-		MeshResource::Sptr branch1Mesh = ResourceManager::CreateAsset<MeshResource>("objs/branches/branches.obj");
-		MeshResource::Sptr tree1Mesh = ResourceManager::CreateAsset<MeshResource>("objs/tree/tree.obj");
-		MeshResource::Sptr coin1Mesh = ResourceManager::CreateAsset<MeshResource>("objs/coins/coin.obj");
 
 		// Load in some textures
+		
 		Texture2D::Sptr    boxTexture   = ResourceManager::CreateAsset<Texture2D>("textures/box-diffuse.png");
 		Texture2D::Sptr    boxSpec      = ResourceManager::CreateAsset<Texture2D>("textures/box-specular.png");
 		Texture2D::Sptr    monkeyTex    = ResourceManager::CreateAsset<Texture2D>("textures/monkey-uvMap.png");
 		Texture2D::Sptr    leafTex      = ResourceManager::CreateAsset<Texture2D>("textures/leaves.png");
 		leafTex->SetMinFilter(MinFilter::Nearest);
 		leafTex->SetMagFilter(MagFilter::Nearest);
-
+/*
 		// Load in some textures
+		
 		Texture2D::Sptr		characterTex = ResourceManager::CreateAsset<Texture2D>("textures/RacoonUV.png");
 		Texture2D::Sptr		yellowCarTex = ResourceManager::CreateAsset<Texture2D>("textures/YellowStripeUV.png");
 		Texture2D::Sptr		terrianTex = ResourceManager::CreateAsset<Texture2D>("textures/GroundTex.png");
 		Texture2D::Sptr		goalTex = ResourceManager::CreateAsset<Texture2D>("textures/CoinUV.png");
 		Texture2D::Sptr     coinTex = ResourceManager::CreateAsset<Texture2D>("textures/CoinTexture.png");
 		Texture2D::Sptr     GrassTex = ResourceManager::CreateAsset<Texture2D>("textures/FullGrass.png");
-		Texture2D::Sptr     TreeTex = ResourceManager::CreateAsset<Texture2D>("textures/treeTexture.png");
-		Texture2D::Sptr     BrownTex = ResourceManager::CreateAsset<Texture2D>("textures/Brown.png");
+
+		
+		
+
+		*/
+		
 
 		//Texture2D::Sptr    boxTexture = ResourceManager::CreateAsset<Texture2D>("textures/box-diffuse.png");
 		//Texture2D::Sptr    boxSpec = ResourceManager::CreateAsset<Texture2D>("textures/box-specular.png");
@@ -269,29 +270,51 @@ void DefaultSceneLayer::_CreateScene()
 		// Configure the color correction LUT
 		scene->SetColorLUT(lut_nor);
 
-		Material::Sptr terrianMaterial = ResourceManager::CreateAsset<Material>(blinnShader);
+
+
+#pragma region MTM
+		// Main Character Pacman
+		MeshResource::Sptr characterMesh = ResourceManager::CreateAsset<MeshResource>("objs/pacman/pacman.obj");
+		Texture2D::Sptr		characterTex = ResourceManager::CreateAsset<Texture2D>("objs/pacman/pacTex.png");
+		Material::Sptr characterMat = ResourceManager::CreateAsset<Material>(blinnShader);
 		{
-			terrianMaterial->Name = "terrianMaterial";
-			terrianMaterial->Set("u_Material.AlbedoMap", terrianTex);
-			terrianMaterial->Set("u_Material.Shininess", 0.8f);
-			terrianMaterial->Set("u_Material.NormalMap", normalMapDefault);
+			characterMat->Name = "character Material";
+			characterMat->Set("u_Material.Diffuse", characterTex);
+			characterMat->Set("u_Material.Shininess", 1.0f);
+			characterMat->Set("u_Material.NormalMap", normalMapDefault);
 		}
 
-
-		Material::Sptr characterTextureMat = ResourceManager::CreateAsset<Material>(blinnShader);
+		// Terrain
+		MeshResource::Sptr terrainMesh = ResourceManager::CreateAsset<MeshResource>("objs/terrain/plainTerrain.obj");
+		Texture2D::Sptr		terrainTex = ResourceManager::CreateAsset<Texture2D>("objs/terrain/FullGrass.png");
+		Material::Sptr terrainMat = ResourceManager::CreateAsset<Material>(deferredShader);
 		{
-			characterTextureMat->Name = "characterTextureMat";
-			characterTextureMat->Set("u_Material.Diffuse", characterTex);
-			characterTextureMat->Set("u_Material.Shininess", 1.0f);
+			terrainMat->Name = "Terrain-Mat";
+			terrainMat->Set("u_Material.Diffuse", terrainTex);
+			terrainMat->Set("u_Material.Shininess", 1.0f);
+			terrainMat->Set("u_Material.NormalMap", normalMapDefault);
 		}
 
-		Material::Sptr carTextureMat = ResourceManager::CreateAsset<Material>(blinnShader);
+		// Goal Point Coin
+		MeshResource::Sptr goalMesh = ResourceManager::CreateAsset<MeshResource>("objs/coin/coin.obj");
+		Texture2D::Sptr		goalTex = ResourceManager::CreateAsset<Texture2D>("objs/coin/CoinTexture.png");
+		Material::Sptr goalMat = ResourceManager::CreateAsset<Material>(blinnShader);
 		{
-			carTextureMat->Name = "CAR Material";
-			carTextureMat->Set("u_Material.Diffuse", yellowCarTex);
-			carTextureMat->Set("u_Material.Shininess", 0.8f);
+			goalMat->Name = "Goal Material";
+			goalMat->Set("u_Material.Diffuse", goalTex);
+			goalMat->Set("u_Material.Shininess", 0.8f);
+			goalMat->Set("u_Material.NormalMap", normalMapDefault);
 		}
 
+		// Lose Point Car
+		MeshResource::Sptr carMesh = ResourceManager::CreateAsset<MeshResource>("objs/car/Car.obj");
+		Texture2D::Sptr		yellowCarTex = ResourceManager::CreateAsset<Texture2D>("objs/car/YellowStripeUV.png");
+		Material::Sptr carMat = ResourceManager::CreateAsset<Material>(blinnShader);
+		{
+			carMat->Name = "CAR Material";
+			carMat->Set("u_Material.Diffuse", yellowCarTex);
+			carMat->Set("u_Material.Shininess", 0.8f);
+		}
 		Material::Sptr carTextureToonMat = ResourceManager::CreateAsset<Material>(toonShader);
 		{
 			carTextureToonMat->Name = "CAR Material";
@@ -301,50 +324,42 @@ void DefaultSceneLayer::_CreateScene()
 			carTextureToonMat->Set("u_Material.Shininess", 1.0f);
 		}
 
-		Material::Sptr goalTextureMat = ResourceManager::CreateAsset<Material>(blinnShader);
-		{
-			goalTextureMat->Name = "wallMaterial";
-			goalTextureMat->Set("u_Material.Diffuse", coinTex);
-			goalTextureMat->Set("u_Material.Shininess", 0.8f);
-
-		}
-
-		Material::Sptr boxSpecMat = ResourceManager::CreateAsset<Material>(specShader);
-		{
-			boxSpecMat->Name = "Box-Specular";
-			boxSpecMat->Set("u_Material.Diffuse", boxTexture);
-			boxSpecMat->Set("u_Material.Specular", boxSpec);
-			boxSpecMat->Set("u_Material.Shininess", 0.5f);
-		}
-
-		Material::Sptr terrainMat = ResourceManager::CreateAsset<Material>(blinnShader);
-		{
-			terrainMat->Name = "Terrain-Mat";
-			terrainMat->Set("u_Material.Diffuse", GrassTex);
-			terrainMat->Set("u_Material.Shininess", 1.0f);
-		}
-
-		Material::Sptr rockMat = ResourceManager::CreateAsset<Material>(blinnShader);
+		// Rocks
+		MeshResource::Sptr rock1Mesh = ResourceManager::CreateAsset<MeshResource>("objs/rocks/rock1.obj");
+		//MeshResource::Sptr rkMesh = ResourceManager::CreateAsset<MeshResource>("objs/ground/terrain.obj");
+		Texture2D::Sptr		rockTex = ResourceManager::CreateAsset<Texture2D>("objs/rocks/rockTex.png");
+		Texture2D::Sptr		rockSpec = ResourceManager::CreateAsset<Texture2D>("objs/rocks/rockSpec.png");
+		Material::Sptr rockMat = ResourceManager::CreateAsset<Material>(specShader);
 		{
 			rockMat->Name = "Rock-Mat";
-			rockMat->Set("u_Material.Diffuse", solidWhiteTex);
+			rockMat->Set("u_Material.Diffuse", rockTex);
+			rockMat->Set("u_Material.Specular", rockSpec);
 			rockMat->Set("u_Material.Shininess", 1.0f);
+			rockMat->Set("u_Material.NormalMap", normalMapDefault);
 		}
 
+		// Trees
+		MeshResource::Sptr tree1Mesh = ResourceManager::CreateAsset<MeshResource>("objs/tree/tree.obj");
+		Texture2D::Sptr     TreeTex = ResourceManager::CreateAsset<Texture2D>("objs/tree/treeTexture.png");
 		Material::Sptr treeMat = ResourceManager::CreateAsset<Material>(blinnShader);
 		{
 			treeMat->Name = "Tree-Mat";
 			treeMat->Set("u_Material.Diffuse", TreeTex);
 			treeMat->Set("u_Material.Shininess", 1.0f);
+			treeMat->Set("u_Material.NormalMap", normalMapDefault);
 		}
 
+		// Branches
+		MeshResource::Sptr branch1Mesh = ResourceManager::CreateAsset<MeshResource>("objs/branches/branches.obj");
+		Texture2D::Sptr     BrownTex = ResourceManager::CreateAsset<Texture2D>("objs/branches/branchTex.png");
 		Material::Sptr brownMat = ResourceManager::CreateAsset<Material>(blinnShader);
 		{
 			brownMat->Name = "Branch-Mat";
 			brownMat->Set("u_Material.Diffuse", BrownTex);
 			brownMat->Set("u_Material.Shininess", 1.0f);
+			brownMat->Set("u_Material.NormalMap", normalMapDefault);
 		}
-
+#pragma endregion
 		/// <summary>
 		/// Shader Texture manager
 		/// </summary>
@@ -355,15 +370,9 @@ void DefaultSceneLayer::_CreateScene()
 			shaderCont->addShader(specShader, "SPEC");
 			shaderCont->addShader(basicShader, "BASI");
 
-
-			//shaderCont->addD3Tex(lut_nor, "LUT_NORM");
-			//shaderCont->addD3Tex(lut_coo, "LUT_COOL");
-			//shaderCont->addD3Tex(lut_war, "LUT_WARM");
-			//shaderCont->addD3Tex(lut_cus, "LUT_CUS");
-
 			SimpleToggle::Sptr toggle = shaderContainer->Add<SimpleToggle>();
 			toggle->_shaderContainer = shaderContainer;
-			toggle->toggleMode = 0;
+			toggle->toggleMode = -1;
 		}
 
 		GameObject::Sptr dynamicLight = scene->CreateGameObject("DynamicLight");
@@ -373,6 +382,10 @@ void DefaultSceneLayer::_CreateScene()
 			light->SetIntensity(-8.0f);
 			light->SetType(LightType::Cone);
 			dynamicLight->Add<SimpleLightFollow>();
+
+			SimpleToggle::Sptr toggle = dynamicLight->Add<SimpleToggle>();
+			toggle->_shaderContainer = shaderContainer;
+			toggle->toggleMode = 0;
 		}
 
 		GameObject::Sptr ambientLight = scene->CreateGameObject("ambientLight");
@@ -383,6 +396,10 @@ void DefaultSceneLayer::_CreateScene()
 			light->SetColor(glm::vec3(1.0f, 1.0f, 1.0f));
 			light->SetRadius(20000.0f);
 			light->SetIntensity(1.0f);
+
+			SimpleToggle::Sptr toggle = ambientLight->Add<SimpleToggle>();
+			toggle->_shaderContainer = shaderContainer;
+			toggle->toggleMode = 0;
 		}
 #pragma region EXAMPLES1
 		/*
@@ -520,6 +537,8 @@ void DefaultSceneLayer::_CreateScene()
 			lightComponent->SetIntensity(glm::linearRand(1.0f, 2.0f));
 		}
 		*/
+#pragma endregion
+
 		// We'll create a mesh that is a simple plane that we can resize later
 		MeshResource::Sptr planeMesh = ResourceManager::CreateAsset<MeshResource>();
 		planeMesh->AddParam(MeshBuilderParam::CreatePlane(ZERO, UNIT_Z, UNIT_X, glm::vec2(1.0f)));
@@ -547,16 +566,20 @@ void DefaultSceneLayer::_CreateScene()
 		GameObject::Sptr plainTerrain = scene->CreateGameObject("Plane");
 		{
 			RenderComponent::Sptr renderer = plainTerrain->Add<RenderComponent>();
-			renderer->SetMesh(plainMesh);
+			renderer->SetMesh(terrainMesh);
 			renderer->SetMaterial(terrainMat);
 
 			RigidBody::Sptr physics = plainTerrain->Add<RigidBody>();
 			physics->AddCollider(ConvexMeshCollider::Create());
+
+			SimpleToggle::Sptr toggle = plainTerrain->Add<SimpleToggle>();
+			toggle->_shaderContainer = shaderContainer;
+			toggle->toggleMode = 1;
 		}
 
 		GameObject::Sptr rock1 = scene->CreateGameObject("Rock1");
 		{
-			rock1->SetPostion(glm::vec3(0.0f, 0.0f, 0.0f));
+			rock1->SetPostion(glm::vec3(10.0f, -10.0f, 0.0f));
 			rock1->SetScale(glm::vec3(1.0f, 1.0f, 1.0f));
 
 			RenderComponent::Sptr renderer = rock1->Add<RenderComponent>();
@@ -565,6 +588,10 @@ void DefaultSceneLayer::_CreateScene()
 
 			RigidBody::Sptr physics = rock1->Add<RigidBody>();
 			physics->AddCollider(ConvexMeshCollider::Create());
+
+			SimpleToggle::Sptr toggle = rock1->Add<SimpleToggle>();
+			toggle->_shaderContainer = shaderContainer;
+			toggle->toggleMode = 3;
 		}
 
 		GameObject::Sptr tree1 = scene->CreateGameObject("Tree1");
@@ -578,6 +605,10 @@ void DefaultSceneLayer::_CreateScene()
 
 			RigidBody::Sptr physics = tree1->Add<RigidBody>();
 			physics->AddCollider(ConvexMeshCollider::Create());
+
+			SimpleToggle::Sptr toggle = tree1->Add<SimpleToggle>();
+			toggle->_shaderContainer = shaderContainer;
+			toggle->toggleMode = 2;
 		}
 
 		GameObject::Sptr branch1 = scene->CreateGameObject("Branch1");
@@ -591,6 +622,10 @@ void DefaultSceneLayer::_CreateScene()
 
 			RigidBody::Sptr physics = branch1->Add<RigidBody>();
 			physics->AddCollider(ConvexMeshCollider::Create());
+
+			SimpleToggle::Sptr toggle = branch1->Add<SimpleToggle>();
+			toggle->_shaderContainer = shaderContainer;
+			toggle->toggleMode = 1;
 		}
 
 		GameObject::Sptr branch2 = scene->CreateGameObject("Branch2");
@@ -604,6 +639,10 @@ void DefaultSceneLayer::_CreateScene()
 
 			RigidBody::Sptr physics = branch2->Add<RigidBody>();
 			physics->AddCollider(ConvexMeshCollider::Create());
+
+			SimpleToggle::Sptr toggle = branch2->Add<SimpleToggle>();
+			toggle->_shaderContainer = shaderContainer;
+			toggle->toggleMode = 1;
 		}
 
 		GameObject::Sptr branch3 = scene->CreateGameObject("Branch3");
@@ -617,6 +656,10 @@ void DefaultSceneLayer::_CreateScene()
 
 			RigidBody::Sptr physics = branch3->Add<RigidBody>();
 			physics->AddCollider(ConvexMeshCollider::Create());
+
+			SimpleToggle::Sptr toggle = branch3->Add<SimpleToggle>();
+			toggle->_shaderContainer = shaderContainer;
+			toggle->toggleMode = 1;
 		}
 
 		GameObject::Sptr branch4 = scene->CreateGameObject("Branch4");
@@ -630,6 +673,10 @@ void DefaultSceneLayer::_CreateScene()
 
 			RigidBody::Sptr physics = branch4->Add<RigidBody>();
 			physics->AddCollider(ConvexMeshCollider::Create());
+
+			SimpleToggle::Sptr toggle = branch4->Add<SimpleToggle>();
+			toggle->_shaderContainer = shaderContainer;
+			toggle->toggleMode = 1;
 		}
 
 		GameObject::Sptr branch5 = scene->CreateGameObject("Branch5");
@@ -643,6 +690,10 @@ void DefaultSceneLayer::_CreateScene()
 
 			RigidBody::Sptr physics = branch5->Add<RigidBody>();
 			physics->AddCollider(ConvexMeshCollider::Create());
+
+			SimpleToggle::Sptr toggle = branch5->Add<SimpleToggle>();
+			toggle->_shaderContainer = shaderContainer;
+			toggle->toggleMode = 1;
 		}
 
 		GameObject::Sptr mainChara = scene->CreateGameObject("PACMAN");
@@ -654,7 +705,7 @@ void DefaultSceneLayer::_CreateScene()
 
 			RenderComponent::Sptr renderer = mainChara->Add<RenderComponent>();
 			renderer->SetMesh(characterMesh);
-			renderer->SetMaterial(characterTextureMat);
+			renderer->SetMaterial(characterMat);
 
 
 			SimpleObjectControl::Sptr objControl = mainChara->Add<SimpleObjectControl>();
@@ -666,8 +717,7 @@ void DefaultSceneLayer::_CreateScene()
 
 			RigidBody::Sptr physics = mainChara->Add<RigidBody>(RigidBodyType::Dynamic);
 			ICollider::Sptr collider = physics->AddCollider(SphereCollider::Create());
-			//collider->SetPosition(glm::vec3(0.0f, 0.0f, 0.0f));
-			//collider->SetScale(glm::vec3(0.5f, 0.5f, 0.5f));
+
 			physics->AddComponent<TriggerVolume>();
 
 
@@ -676,7 +726,7 @@ void DefaultSceneLayer::_CreateScene()
 
 			SimpleToggle::Sptr toggle = mainChara->Add<SimpleToggle>();
 			toggle->_shaderContainer = shaderContainer;
-			toggle->toggleMode = 2;
+			toggle->toggleMode = 1;
 
 
 		}
@@ -689,7 +739,7 @@ void DefaultSceneLayer::_CreateScene()
 
 			RenderComponent::Sptr renderer = car->Add<RenderComponent>();
 			renderer->SetMesh(carMesh);
-			renderer->SetMaterial(carTextureMat);
+			renderer->SetMaterial(carMat);
 
 
 
@@ -702,9 +752,10 @@ void DefaultSceneLayer::_CreateScene()
 
 			SimpleToggle::Sptr toggle = car->Add<SimpleToggle>();
 			toggle->_shaderContainer = shaderContainer;
-			toggle->toggleMode = 2;
+			toggle->toggleMode = 1;
 		}
 
+		/*
 		GameObject::Sptr carToon = scene->CreateGameObject("Car For Toon");
 		{
 			carToon->SetPostion(glm::vec3(15.0f, 0.0f, 0.0f));
@@ -718,7 +769,7 @@ void DefaultSceneLayer::_CreateScene()
 			SimpleToggle::Sptr toggle = carToon->Add<SimpleToggle>();
 			toggle->_shaderContainer = shaderContainer;
 			toggle->toggleMode = 2;
-		}
+		}*/
 
 		GameObject::Sptr goal = scene->CreateGameObject("Point For GOAL");
 		{
@@ -727,8 +778,8 @@ void DefaultSceneLayer::_CreateScene()
 			goal->SetRotation(glm::vec3(0.0f, -90.0f, 0.0f));
 
 			RenderComponent::Sptr renderer = goal->Add<RenderComponent>();
-			renderer->SetMesh(coin1Mesh);
-			renderer->SetMaterial(goalTextureMat);
+			renderer->SetMesh(goalMesh);
+			renderer->SetMaterial(goalMat);
 
 			TriggerVolume::Sptr volume = goal->Add<TriggerVolume>();
 			volume->AddCollider(ConvexMeshCollider::Create());
@@ -736,7 +787,24 @@ void DefaultSceneLayer::_CreateScene()
 
 			SimpleToggle::Sptr toggle = goal->Add<SimpleToggle>();
 			toggle->_shaderContainer = shaderContainer;
-			toggle->toggleMode = 2;
+			toggle->toggleMode = 1;
+
+			ParticleSystem::Sptr particleManager = goal->Add<ParticleSystem>();
+			particleManager->Atlas = particleTex;
+
+			ParticleSystem::ParticleData emitter;
+			emitter.Type = ParticleType::SphereEmitter;
+			emitter.TexID = 3;
+			emitter.Position = glm::vec3(0.0f);
+			emitter.Color = glm::vec4(1.0f, 1.0f, 0.0f, 1.0f);
+			emitter.Lifetime = 0.0f;
+			emitter.SphereEmitterData.Timer = 1.0f / 50.0f;
+			emitter.SphereEmitterData.Velocity = 1.0f;
+			emitter.SphereEmitterData.LifeRange = { 1.0f, 4.0f };
+			emitter.SphereEmitterData.Radius = 2.5f;
+			emitter.SphereEmitterData.SizeRange = { 0.5f, 1.5f };
+
+			particleManager->AddEmitter(emitter);
 		}
 #pragma region EXAMPLES2
 /*	
@@ -1045,17 +1113,26 @@ void DefaultSceneLayer::_CreateScene()
 		}
 		
 		*/
+
+#pragma endregion
+
 		// Shadow Light - currently semi working base on light - light need to be fixed to not go random and shouldn't move unless bigger range and etc.
 		GameObject::Sptr shadowCaster = scene->CreateGameObject("Shadow Light");
 		{
 			// Set position in the scene
 			shadowCaster->SetPostion(glm::vec3(50.0f, 50.0f, 50.0f));
-			shadowCaster->SetRotation(glm::vec3(84.318f, -90.0f, 157.0f));
-			shadowCaster->LookAt(glm::vec3(0.0f));
+			shadowCaster->SetRotation(glm::vec3(0.0f));
+			shadowCaster->SetScale(glm::vec3(2.0f, 2.0f, 1.0f));
+			//shadowCaster->LookAt(glm::vec3(0.0f));
 
 			// Create and attach a renderer for the monkey
 			ShadowCamera::Sptr shadowCam = shadowCaster->Add<ShadowCamera>();
 			shadowCam->SetProjection(glm::perspective(glm::radians(120.0f), 1.0f, 0.1f, 100.0f));
+			
+
+			SimpleToggle::Sptr toggle = shadowCaster->Add<SimpleToggle>();
+			toggle->_shaderContainer = shaderContainer;
+			toggle->toggleMode = 4;
 		}
 
 		//Particles that spawn at set location center.
@@ -1079,9 +1156,12 @@ void DefaultSceneLayer::_CreateScene()
 			emitter.SphereEmitterData.SizeRange = { 0.5f, 1.5f };
 
 			particleManager->AddEmitter(emitter);
+
+			SimpleParticleFollow::Sptr partFollow = particles->Add<SimpleParticleFollow>();
+			partFollow->gobjFollow = mainChara;
 		}
 		
-#pragma endregion
+
 		GuiBatcher::SetDefaultTexture(ResourceManager::CreateAsset<Texture2D>("textures/ui-sprite.png"));
 		GuiBatcher::SetDefaultBorderRadius(8);
 
