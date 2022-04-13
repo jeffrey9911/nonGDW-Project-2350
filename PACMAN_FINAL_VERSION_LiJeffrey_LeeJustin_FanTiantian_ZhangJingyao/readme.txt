@@ -10,7 +10,16 @@ Rules: Collect coins (beta version), in this game you collect one coin and you w
 if you come in contact with the car you lose and both will reset position.
 
 Movement: W - forward, A - left, S - backward, D - right
-Toggles: We are using Imgui for shadow, post-processing, particle effects. 
+
+Toggles: We are using Imgui for: 
+Shadow: In Hierarchy->Shadow Light
+post-processing: Windows->Post_Processing->check or uncheck mark for post-processing, main effect for our game which are
+Pixelation Effect, Color Correction, Bloom, Night Vision.
+particle effects: In Hierarchy->Particles 
+
+KeyToggles: 
+Buggy: 1- no lighting, 2 - Ambient Lighting, 3 Specular Lighting, 4 - Ambient + Specular, 8 Color grading warm, 
+Works: 9 - Texture (on/off), 0 - light (on/off).
 
 acknowledgements:
 
