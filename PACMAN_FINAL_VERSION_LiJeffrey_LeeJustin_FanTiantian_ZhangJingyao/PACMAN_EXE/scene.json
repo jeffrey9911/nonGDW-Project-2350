@@ -5,7 +5,7 @@
 		"z": 0.10000000149011612
 	},
 	"default_material": "null",
-	"main_camera": "04a9e9c6-3062-ff4f-bbfb-def23bd8ad30",
+	"main_camera": "b6922497-c84c-d44c-aa72-e0396d4fafba",
 	"objects": [
 		{
 			"children": [],
@@ -20,17 +20,17 @@
 					"enabled": true,
 					"far_plane": 1000.0,
 					"fov_radians": 1.5707963705062866,
-					"guid": "04a9e9c6-3062-ff4f-bbfb-def23bd8ad30",
+					"guid": "b6922497-c84c-d44c-aa72-e0396d4fafba",
 					"near_plane": 0.10000000149011612,
 					"ortho_enabled": false,
 					"ortho_size": 10.0
 				},
 				"SimpleCameraFollow": {
 					"enabled": true,
-					"guid": "5c60a9a4-0f9a-7046-8380-9ce57223b11c"
+					"guid": "c2b3bc59-9b20-f54a-b0a5-18e5cc67d667"
 				}
 			},
-			"guid": "30559596-3215-2446-abc2-b9c4d68c2d98",
+			"guid": "7a7a1a9d-7f4c-0a4d-b606-fd1eb9404212",
 			"hide_in_inspector": false,
 			"name": "Main Camera",
 			"parent": "null",
@@ -56,14 +56,14 @@
 			"components": {
 				"ShaderContainer": {
 					"enabled": true,
-					"guid": "6b2e4849-d76d-e040-bc8b-bb24ef37771f"
+					"guid": "565ca613-80f7-1344-9882-d28a78104e86"
 				},
 				"SimpleToggle": {
 					"enabled": true,
-					"guid": "319f7ee5-d337-524d-bfcb-ebdb230a4268"
+					"guid": "2da2be8e-9dfa-5f43-a7ec-51d18b074724"
 				}
 			},
-			"guid": "cba43b16-72a4-1849-bd17-ac48ffac315f",
+			"guid": "174f2d80-ce37-7841-bdd3-a575d473b530",
 			"hide_in_inspector": false,
 			"name": "ShaderContainer",
 			"parent": "null",
@@ -99,7 +99,7 @@
 						"z": -1.0
 					},
 					"enabled": true,
-					"guid": "ab091d12-ec63-fa41-a6da-a20e15966d5c",
+					"guid": "230cca66-27fa-994a-a67d-0cc09d26c07e",
 					"intensity": -8.0,
 					"params": {
 						"x": 0.0,
@@ -111,14 +111,14 @@
 				},
 				"SimpleLightFollow": {
 					"enabled": true,
-					"guid": "488c3015-599b-874f-82c7-07c89539ec6e"
+					"guid": "a0b56f0a-df54-8643-9f4f-6aa4d072e354"
 				},
 				"SimpleToggle": {
 					"enabled": true,
-					"guid": "4a1f50f5-5c62-5b43-a9b1-90b0d6935d58"
+					"guid": "0ff4ffb2-5306-144e-ab35-14bfad24ca8e"
 				}
 			},
-			"guid": "6d87c4eb-6ff7-e848-8959-316f0ad39bb5",
+			"guid": "073c2647-2dec-5742-a61e-67822a138292",
 			"hide_in_inspector": false,
 			"name": "DynamicLight",
 			"parent": "null",
@@ -154,7 +154,7 @@
 						"z": -1.0
 					},
 					"enabled": true,
-					"guid": "c8792e43-7315-614d-9710-262ec70cee56",
+					"guid": "31f9d611-0171-b740-8598-b67675af76c8",
 					"intensity": 1.0,
 					"params": {
 						"x": 0.0,
@@ -166,10 +166,10 @@
 				},
 				"SimpleToggle": {
 					"enabled": true,
-					"guid": "666b624f-ad3b-3047-88c8-9ce107099893"
+					"guid": "db533332-3870-1f4a-8a24-a5279a2906ed"
 				}
 			},
-			"guid": "fae0613a-c4f9-cd46-8337-53decf594841",
+			"guid": "f310ea5b-ec9a-5943-9e8b-aff62acb297a",
 			"hide_in_inspector": false,
 			"name": "ambientLight",
 			"parent": "null",
@@ -197,7 +197,7 @@
 					"angular_damping": 0.004999999888241291,
 					"colliders": [
 						{
-							"guid": "ba826fa3-d2b6-6746-9412-ff0a1bb101a9",
+							"guid": "67ce3cc0-1207-1c4f-9eb7-82ad6c745567",
 							"position": {
 								"x": 0.0,
 								"y": 0.0,
@@ -218,7 +218,7 @@
 					],
 					"enabled": true,
 					"group": 1,
-					"guid": "838171c4-9377-0e47-bb67-17e9202dce7f",
+					"guid": "e2e082fc-a2af-7c41-a82e-4b95ddda0527",
 					"linear_damping": 0.0,
 					"mask": -1,
 					"mass": 1.0,
@@ -226,16 +226,16 @@
 				},
 				"RenderComponent": {
 					"enabled": true,
-					"guid": "24cd36e8-d5cf-d443-a35a-e616b9c2ce83",
-					"material": "e04d47d9-4718-e94f-9eb2-0a3d11b7083c",
-					"mesh": "eee5d96b-5043-bf4d-a643-f2395204bc44"
+					"guid": "5c6d8881-40c2-3348-888e-54a3ad0a7bb5",
+					"material": "f9b00757-b9b6-eb47-a06c-dcb50cefc945",
+					"mesh": "ec810b27-7a9c-1842-af18-3c6c3ed6cd4d"
 				},
 				"SimpleToggle": {
 					"enabled": true,
-					"guid": "123d6b2e-b77e-e447-969c-7e460f5168c9"
+					"guid": "9f1eb991-ca70-994f-92c1-8518345ab69a"
 				}
 			},
-			"guid": "72a6f8bd-9657-4242-b255-2a6d5006fcb8",
+			"guid": "687dc075-ccc7-ea47-afad-42460748c39b",
 			"hide_in_inspector": false,
 			"name": "Plane",
 			"parent": "null",
@@ -263,7 +263,7 @@
 					"angular_damping": 0.004999999888241291,
 					"colliders": [
 						{
-							"guid": "9a738a1e-7323-8148-bfbe-91901219f55c",
+							"guid": "29b830f2-1124-394f-8b87-080efa7febc9",
 							"position": {
 								"x": 0.0,
 								"y": 0.0,
@@ -284,7 +284,7 @@
 					],
 					"enabled": true,
 					"group": 1,
-					"guid": "54be9408-62ae-7045-a85a-ca45fc60ea25",
+					"guid": "daa5e0d0-4e5f-5044-a7d6-882436daf546",
 					"linear_damping": 0.0,
 					"mask": -1,
 					"mass": 1.0,
@@ -292,16 +292,16 @@
 				},
 				"RenderComponent": {
 					"enabled": true,
-					"guid": "ad93a3e8-fce2-4144-8631-c50993b8030e",
-					"material": "e3b75365-6c88-0f44-98ba-dc10bed5720d",
-					"mesh": "f3938237-2810-5c41-861a-3cee5afa8448"
+					"guid": "ddf433ee-22c7-4341-a8c1-290534e27ccc",
+					"material": "47590312-216a-b546-957c-6c201c27f7ca",
+					"mesh": "e6b3cdd8-cf58-574f-95c3-63469fe87c93"
 				},
 				"SimpleToggle": {
 					"enabled": true,
-					"guid": "95d95efb-ab1b-e149-bdb0-bb2e3ea12cef"
+					"guid": "2eefd5f1-dca2-b248-bbab-22af8999092f"
 				}
 			},
-			"guid": "7295d30d-767a-b249-a0ea-6a1bb2f50cc8",
+			"guid": "960cd870-db9c-ed44-adff-fe87800a67dc",
 			"hide_in_inspector": false,
 			"name": "Rock1",
 			"parent": "null",
@@ -329,7 +329,7 @@
 					"angular_damping": 0.004999999888241291,
 					"colliders": [
 						{
-							"guid": "4dd55490-8848-8e48-8521-83e0153d47da",
+							"guid": "2467f365-0b32-0744-95d8-b68c1549ae22",
 							"position": {
 								"x": 0.0,
 								"y": 0.0,
@@ -350,7 +350,7 @@
 					],
 					"enabled": true,
 					"group": 1,
-					"guid": "23250c8e-522f-a74a-9604-36be5cf99dd3",
+					"guid": "e615f942-cfae-0741-bd6a-c27fdfa80c96",
 					"linear_damping": 0.0,
 					"mask": -1,
 					"mass": 1.0,
@@ -358,16 +358,16 @@
 				},
 				"RenderComponent": {
 					"enabled": true,
-					"guid": "e9f33022-b9a6-e94b-bfd4-48aea4e0aedc",
-					"material": "bcb432f2-f139-f046-a16d-ed20b7d8d366",
-					"mesh": "f50ff969-4c10-a249-a70b-c38d35b3b8b3"
+					"guid": "6089d50c-cbec-6343-91dd-4690ee8ef58e",
+					"material": "be95879c-9640-e442-bf6e-9a0385bb8e5a",
+					"mesh": "5a57b18f-d03c-9147-afba-7dd6a72551c2"
 				},
 				"SimpleToggle": {
 					"enabled": true,
-					"guid": "45cba7f4-d1e9-1640-9d96-90c1ffaa5612"
+					"guid": "8df56df4-93b4-684f-b54e-297bb321833b"
 				}
 			},
-			"guid": "13100162-a9b8-3245-8e68-a3cfb9c41e8e",
+			"guid": "ac8bcaaf-7a17-4947-8cfe-0a574bd8a327",
 			"hide_in_inspector": false,
 			"name": "Tree1",
 			"parent": "null",
@@ -395,7 +395,7 @@
 					"angular_damping": 0.004999999888241291,
 					"colliders": [
 						{
-							"guid": "f005dd84-6b7e-1445-ae20-40dbf85e1d81",
+							"guid": "eae5e1d4-7464-c24e-8176-1dac44b0fbbb",
 							"position": {
 								"x": 0.0,
 								"y": 0.0,
@@ -416,7 +416,7 @@
 					],
 					"enabled": true,
 					"group": 1,
-					"guid": "2907885b-924e-6e41-a0b7-b6abf7b349b8",
+					"guid": "7a2f394b-8134-7b40-a5a5-1c9065c19830",
 					"linear_damping": 0.0,
 					"mask": -1,
 					"mass": 1.0,
@@ -424,16 +424,16 @@
 				},
 				"RenderComponent": {
 					"enabled": true,
-					"guid": "b805a2d4-199b-dd48-bdd9-d4232b2b8362",
-					"material": "65fe0bf2-f797-5e42-bac4-fb1680a39a7c",
-					"mesh": "d3b18f58-7894-d344-aaba-4b72c5228642"
+					"guid": "c620e45b-e42a-d541-8054-c8ab48095ff3",
+					"material": "a48e6c66-f89d-ed43-bc8d-ba69ec153445",
+					"mesh": "59204451-ed2d-0043-89ea-65a45135fa35"
 				},
 				"SimpleToggle": {
 					"enabled": true,
-					"guid": "a61af8f0-27a6-a44f-a337-7ee8625c16e6"
+					"guid": "dd209d8e-c5b8-5e4f-a94c-b6a2c63cacd6"
 				}
 			},
-			"guid": "e7933ceb-913b-f948-93f4-ca7d967ac207",
+			"guid": "4c4262aa-a70b-4349-9bc7-e49b9a31cc91",
 			"hide_in_inspector": false,
 			"name": "Branch1",
 			"parent": "null",
@@ -461,7 +461,7 @@
 					"angular_damping": 0.004999999888241291,
 					"colliders": [
 						{
-							"guid": "83206312-684f-6440-a102-c404d88ee984",
+							"guid": "e7293699-6431-1d47-b9fa-f6db70b799f2",
 							"position": {
 								"x": 0.0,
 								"y": 0.0,
@@ -482,7 +482,7 @@
 					],
 					"enabled": true,
 					"group": 1,
-					"guid": "8bf8799d-8b66-7549-b9a7-c6a203b71966",
+					"guid": "728b6d48-8b55-494f-a518-82b62adeb189",
 					"linear_damping": 0.0,
 					"mask": -1,
 					"mass": 1.0,
@@ -490,16 +490,16 @@
 				},
 				"RenderComponent": {
 					"enabled": true,
-					"guid": "5e45fb79-161d-8a4d-b387-642432ff65f3",
-					"material": "65fe0bf2-f797-5e42-bac4-fb1680a39a7c",
-					"mesh": "d3b18f58-7894-d344-aaba-4b72c5228642"
+					"guid": "f5f45caf-9ac9-8b43-913f-a3fac48c617b",
+					"material": "a48e6c66-f89d-ed43-bc8d-ba69ec153445",
+					"mesh": "59204451-ed2d-0043-89ea-65a45135fa35"
 				},
 				"SimpleToggle": {
 					"enabled": true,
-					"guid": "8c294677-6aad-eb40-92e9-f9deba5709fd"
+					"guid": "5d05fce5-4bad-0040-8320-735a9f581ca3"
 				}
 			},
-			"guid": "fea04031-9425-dd45-bb53-6b3aba8f20a0",
+			"guid": "b0591459-fb61-204b-9cf5-1e66fe16c69a",
 			"hide_in_inspector": false,
 			"name": "Branch2",
 			"parent": "null",
@@ -527,7 +527,7 @@
 					"angular_damping": 0.004999999888241291,
 					"colliders": [
 						{
-							"guid": "84979e7e-6732-8f4c-add0-f1620a00267f",
+							"guid": "5943e89d-9d4e-a64c-9d1b-625da273316e",
 							"position": {
 								"x": 0.0,
 								"y": 0.0,
@@ -548,7 +548,7 @@
 					],
 					"enabled": true,
 					"group": 1,
-					"guid": "aa2f34f1-fe10-f048-b932-359f9e70bc35",
+					"guid": "768c0839-ced1-c84c-a45f-0c18b3ef5d1c",
 					"linear_damping": 0.0,
 					"mask": -1,
 					"mass": 1.0,
@@ -556,16 +556,16 @@
 				},
 				"RenderComponent": {
 					"enabled": true,
-					"guid": "e0d44853-7e08-bb4a-a4d9-dea8a544946f",
-					"material": "65fe0bf2-f797-5e42-bac4-fb1680a39a7c",
-					"mesh": "d3b18f58-7894-d344-aaba-4b72c5228642"
+					"guid": "c966d593-042a-7d43-ad1c-5eebfff7fc50",
+					"material": "a48e6c66-f89d-ed43-bc8d-ba69ec153445",
+					"mesh": "59204451-ed2d-0043-89ea-65a45135fa35"
 				},
 				"SimpleToggle": {
 					"enabled": true,
-					"guid": "1505906a-d754-7c42-826b-c467e7992e92"
+					"guid": "6b62fe53-8935-6e41-bb00-eb2e6980933d"
 				}
 			},
-			"guid": "603d8ae8-65a9-e643-a5eb-2813a90291d5",
+			"guid": "167020a3-8f43-cc46-93a2-5ee2abd77dde",
 			"hide_in_inspector": false,
 			"name": "Branch3",
 			"parent": "null",
@@ -593,7 +593,7 @@
 					"angular_damping": 0.004999999888241291,
 					"colliders": [
 						{
-							"guid": "3f3e070f-31ac-3940-9609-267b57937122",
+							"guid": "5e039163-a228-4a4b-80e3-fca9a6153850",
 							"position": {
 								"x": 0.0,
 								"y": 0.0,
@@ -614,7 +614,7 @@
 					],
 					"enabled": true,
 					"group": 1,
-					"guid": "b6759dd4-536b-da47-8d23-f5475afca0e2",
+					"guid": "314fedfa-1e65-9d4d-8350-a710dc1d943b",
 					"linear_damping": 0.0,
 					"mask": -1,
 					"mass": 1.0,
@@ -622,16 +622,16 @@
 				},
 				"RenderComponent": {
 					"enabled": true,
-					"guid": "428c6afe-e9a1-fd45-9890-414931a8fdc4",
-					"material": "65fe0bf2-f797-5e42-bac4-fb1680a39a7c",
-					"mesh": "d3b18f58-7894-d344-aaba-4b72c5228642"
+					"guid": "3124024f-f70d-8141-9e39-2116fdb831e8",
+					"material": "a48e6c66-f89d-ed43-bc8d-ba69ec153445",
+					"mesh": "59204451-ed2d-0043-89ea-65a45135fa35"
 				},
 				"SimpleToggle": {
 					"enabled": true,
-					"guid": "437ee8e1-36e7-7d4b-a6a0-2c5235d60ab5"
+					"guid": "8e1fb1f3-a57d-4b4c-85f4-229e875dace7"
 				}
 			},
-			"guid": "3aedb55b-2803-2f49-87ec-cf540f02bd58",
+			"guid": "ab05930e-9f2f-7b4d-9380-397ba5afd631",
 			"hide_in_inspector": false,
 			"name": "Branch4",
 			"parent": "null",
@@ -659,7 +659,7 @@
 					"angular_damping": 0.004999999888241291,
 					"colliders": [
 						{
-							"guid": "6f0cfbda-984f-ec48-a48c-9c9debd425e9",
+							"guid": "d2943f8e-0b78-0b4e-a1ac-bf255ae9bda3",
 							"position": {
 								"x": 0.0,
 								"y": 0.0,
@@ -680,7 +680,7 @@
 					],
 					"enabled": true,
 					"group": 1,
-					"guid": "f1b34ce0-3bd8-554a-acfc-83a30836d5be",
+					"guid": "b3d17276-b6f8-de4e-ada9-16dc34335049",
 					"linear_damping": 0.0,
 					"mask": -1,
 					"mass": 1.0,
@@ -688,16 +688,16 @@
 				},
 				"RenderComponent": {
 					"enabled": true,
-					"guid": "c674768d-bdab-4e44-9e62-a0ef1c362480",
-					"material": "65fe0bf2-f797-5e42-bac4-fb1680a39a7c",
-					"mesh": "d3b18f58-7894-d344-aaba-4b72c5228642"
+					"guid": "f7428769-8357-2640-80a4-842717bde5a2",
+					"material": "a48e6c66-f89d-ed43-bc8d-ba69ec153445",
+					"mesh": "59204451-ed2d-0043-89ea-65a45135fa35"
 				},
 				"SimpleToggle": {
 					"enabled": true,
-					"guid": "11097176-c413-d144-a241-0ba4f5478468"
+					"guid": "769d2da6-7f45-334a-9d97-d2c06c381df8"
 				}
 			},
-			"guid": "9f0ff7cf-e04c-464f-ae61-a2a2d92970d8",
+			"guid": "44deb105-259c-5a49-974f-92fa27e1c381",
 			"hide_in_inspector": false,
 			"name": "Branch5",
 			"parent": "null",
@@ -725,7 +725,7 @@
 					"angular_damping": 0.004999999888241291,
 					"colliders": [
 						{
-							"guid": "d57df410-a2f9-914f-aec1-1f7a9f295d49",
+							"guid": "ad2f0170-b2f8-e946-931b-bfe05fd440c8",
 							"position": {
 								"x": 0.0,
 								"y": 0.0,
@@ -747,7 +747,7 @@
 					],
 					"enabled": true,
 					"group": 1,
-					"guid": "0f915f07-121b-9040-b804-0d980ee6e997",
+					"guid": "0d97ca13-2cd5-d846-917a-26658c23c4e5",
 					"linear_damping": 0.0,
 					"mask": -1,
 					"mass": 1.0,
@@ -757,30 +757,30 @@
 					"colliders": [],
 					"enabled": true,
 					"group": 1,
-					"guid": "d9ac3132-0e90-3c4f-b5b4-eb217dcb6f2c",
+					"guid": "5189d745-7966-bb43-bfc0-10e2710b6146",
 					"mask": -1
 				},
 				"JumpBehaviour": {
 					"enabled": true,
-					"guid": "f7280ca6-6f76-344b-8e79-ba5f8ffe4e5f",
+					"guid": "c4a7fe4d-fb65-f243-9ba0-aece0c1d5152",
 					"impulse": 10.0
 				},
 				"RenderComponent": {
 					"enabled": true,
-					"guid": "b46eef9f-293b-4447-9eb0-f6f6f8765032",
-					"material": "da44a5d8-422d-2746-bcd6-8ed6b41ec785",
-					"mesh": "bd572e56-2332-be45-86da-6e133f82b95b"
+					"guid": "982a9f1a-f2b1-1f4a-8537-b561da8eeee3",
+					"material": "d38bdf13-dcbf-8840-875d-91b3eba388d6",
+					"mesh": "ed433830-7753-bd46-903b-ae6f017dd296"
 				},
 				"SimpleObjectControl": {
 					"enabled": true,
-					"guid": "151fac7e-c984-c34b-919e-0c393a3dd39e"
+					"guid": "aede5f4c-5b72-8740-b435-375e9d1014bc"
 				},
 				"SimpleToggle": {
 					"enabled": true,
-					"guid": "f5116b55-757d-6c4c-853a-60a5616d7075"
+					"guid": "ac5cae70-abc0-514a-8180-e09c987befc3"
 				}
 			},
-			"guid": "b6605feb-7911-2244-93e8-091ff9719286",
+			"guid": "46041553-1e45-b845-bf1d-8d1c44bcd981",
 			"hide_in_inspector": false,
 			"name": "PACMAN",
 			"parent": "null",
@@ -809,7 +809,7 @@
 					"colliders": [],
 					"enabled": true,
 					"group": 1,
-					"guid": "77b8c06a-f267-2845-b067-c48d2664e033",
+					"guid": "3581e07f-77fb-3b4d-9a57-d0e77a5caba1",
 					"linear_damping": 0.0,
 					"mask": -1,
 					"mass": 1.0,
@@ -818,7 +818,7 @@
 				"Gameplay::Physics::TriggerVolume": {
 					"colliders": [
 						{
-							"guid": "3162ce92-d9c7-a944-9bde-2c8f23d144cd",
+							"guid": "53fc736c-3fa3-0549-b66c-bd890e8879b2",
 							"position": {
 								"x": 0.0,
 								"y": 0.0,
@@ -839,25 +839,25 @@
 					],
 					"enabled": true,
 					"group": 1,
-					"guid": "e176b6d3-72d3-6341-ae5b-f9494969da66",
+					"guid": "ed07b797-530c-ef44-94c3-da039a52e35f",
 					"mask": -1
 				},
 				"KillBehaviour": {
 					"enabled": true,
-					"guid": "db5319b9-5277-9c4d-abaf-aaeaaac27bb1"
+					"guid": "f7cbfae1-5663-8c4c-8ce6-35ff208a0daf"
 				},
 				"RenderComponent": {
 					"enabled": true,
-					"guid": "cb65a443-1e21-ef47-a14f-b63a61b59f19",
-					"material": "02a3aa64-05db-cc4e-9589-34581347edc0",
-					"mesh": "3554f08e-4ee5-eb46-8f93-5156d3c76752"
+					"guid": "a8a5b41a-64fa-b946-855b-df4ea0bf626d",
+					"material": "6cb8f9f8-f266-404a-a88a-9bf3b0dc61c6",
+					"mesh": "8d7882d4-4a5d-c944-a317-38834d892b73"
 				},
 				"SimpleToggle": {
 					"enabled": true,
-					"guid": "0cd22564-cd3e-7645-9a46-aa4228b369cd"
+					"guid": "79e25d4f-ecd4-3a4f-8aeb-d23d34e6d849"
 				}
 			},
-			"guid": "c5e201be-4965-fe42-b11e-3595563314a5",
+			"guid": "4a3f838f-995a-254a-a84b-6a5fa17704f9",
 			"hide_in_inspector": false,
 			"name": "Car For LOSE",
 			"parent": "null",
@@ -884,7 +884,7 @@
 				"Gameplay::Physics::TriggerVolume": {
 					"colliders": [
 						{
-							"guid": "6432c5c6-44ee-e740-b40a-534b13a1c02f",
+							"guid": "04d91b4c-bc6a-db44-ac3c-fe0c049f979a",
 							"position": {
 								"x": 0.0,
 								"y": 0.0,
@@ -905,15 +905,15 @@
 					],
 					"enabled": true,
 					"group": 1,
-					"guid": "9c4bf51c-d3dc-9d42-847f-6ed3b2c6186b",
+					"guid": "9d997857-f5bf-ce45-b56f-a7c87de67beb",
 					"mask": -1
 				},
 				"GoalBehaviour": {
 					"enabled": true,
-					"guid": "5470a074-e0be-1a4d-906f-0786677bbf8e"
+					"guid": "3a40810a-4f07-914d-8afa-11a402dfea0a"
 				},
 				"ParticleSystem": {
-					"atlas": "0319f4d5-ca77-5341-8260-ee04e4f6615a",
+					"atlas": "26f7477b-6a6a-3c46-a2c4-b3d13de2bb9d",
 					"emitters": [
 						{
 							"color": {
@@ -951,21 +951,21 @@
 						"y": 0.0,
 						"z": -9.8100004196167
 					},
-					"guid": "2a771724-32c2-ef46-9ffe-b0ee5dac52aa",
+					"guid": "39309b91-77f0-584e-9b0d-e79a1908db1c",
 					"max_particles": 1000
 				},
 				"RenderComponent": {
 					"enabled": true,
-					"guid": "c59af712-eaa0-834a-8c50-f92888a0bf0c",
-					"material": "354e73a0-826d-5347-a268-af203ff39a74",
-					"mesh": "37bc76be-a97d-0845-9f60-5d00fc178bb5"
+					"guid": "458afeff-becd-2840-a63c-3122a11c7794",
+					"material": "33e61dde-c642-c445-a26e-e19e05e33e87",
+					"mesh": "149a9241-e11e-8b4e-8572-4d1c3250712b"
 				},
 				"SimpleToggle": {
 					"enabled": true,
-					"guid": "58790604-1033-e348-a204-5f6cfcd6eec7"
+					"guid": "746d1fcd-4721-5840-81cd-5b07c8b47633"
 				}
 			},
-			"guid": "6cf3c1e0-340e-cc4e-b0f7-5521b86b0daf",
+			"guid": "549c6fb1-4185-be4e-a7e4-62622cc920a9",
 			"hide_in_inspector": false,
 			"name": "Point For GOAL",
 			"parent": "null",
@@ -999,7 +999,7 @@
 					},
 					"enabled": true,
 					"flags": 0,
-					"guid": "eca6c836-5aa1-e54b-95b6-9a133f1b99e2",
+					"guid": "ac896e16-8f18-414b-b97c-e7425c655866",
 					"intensity": 1.0,
 					"mask": "null",
 					"normal_bias": 9.999999974752427e-07,
@@ -1037,10 +1037,10 @@
 				},
 				"SimpleToggle": {
 					"enabled": true,
-					"guid": "c738d292-de62-d64b-9ea3-453eec6cbe9f"
+					"guid": "2dc0c487-3c4e-a44b-b3ca-05e11f7b2d18"
 				}
 			},
-			"guid": "f9112bf8-448f-7645-8a50-d725f86e87da",
+			"guid": "cb05f036-bdc7-6b4f-8997-cd6773158eb6",
 			"hide_in_inspector": false,
 			"name": "Shadow Light",
 			"parent": "null",
@@ -1065,7 +1065,7 @@
 			"children": [],
 			"components": {
 				"ParticleSystem": {
-					"atlas": "0319f4d5-ca77-5341-8260-ee04e4f6615a",
+					"atlas": "26f7477b-6a6a-3c46-a2c4-b3d13de2bb9d",
 					"emitters": [
 						{
 							"color": {
@@ -1103,15 +1103,15 @@
 						"y": 0.0,
 						"z": -9.8100004196167
 					},
-					"guid": "22a30683-16b6-3f40-bec1-73bcb05a5901",
+					"guid": "4943140b-2ba7-3d4a-8d10-ff2444f9c306",
 					"max_particles": 1000
 				},
 				"SimpleParticleFollow": {
 					"enabled": true,
-					"guid": "f665c005-6538-7446-8d47-91a6c13a0db3"
+					"guid": "c76bab02-a009-1445-bc42-cb81ba8b6dde"
 				}
 			},
-			"guid": "0b24b37e-29f9-3b4f-883b-dab0367965e9",
+			"guid": "cf46c0cd-92cf-7e4d-b8f7-96054ebb9ec1",
 			"hide_in_inspector": false,
 			"name": "Particles",
 			"parent": "null",
@@ -1141,7 +1141,7 @@
 			"y": 0.0,
 			"z": 0.0
 		},
-		"shader": "daa0f37a-217e-f645-877a-d4399484eac7",
-		"texture": "c6819d2c-da3c-0246-9088-0c034e654cbe"
+		"shader": "38c66ad8-b979-6b4f-8393-cadc0286f98a",
+		"texture": "6f99c495-cfe4-1541-9902-d1b8bc01de92"
 	}
 }

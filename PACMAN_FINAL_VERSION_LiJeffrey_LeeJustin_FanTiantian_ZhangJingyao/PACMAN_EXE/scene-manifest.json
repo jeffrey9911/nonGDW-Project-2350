@@ -1,16 +1,16 @@
 {
 	"Texture1D": {
-		"865cf59f-c5ea-c742-b08e-6bb6f54a9bad": {
+		"7e6d77c1-6f60-2947-930e-edc5a184aa49": {
 			"filename": "luts/toon-1D.png",
 			"filter_mag": "Linear",
 			"filter_min": "NearestMipLinear",
 			"generate_mipmaps": true,
 			"wrap_mode": "",
-			"guid": "865cf59f-c5ea-c742-b08e-6bb6f54a9bad"
+			"guid": "7e6d77c1-6f60-2947-930e-edc5a184aa49"
 		}
 	},
 	"Texture2D": {
-		"43ab2ba8-3fee-4748-a838-10b80d72ded7": {
+		"4f8b259f-9472-314b-85d1-6c7b2e5b2e32": {
 			"anisotropic": 16.0,
 			"filename": "textures/box-diffuse.png",
 			"filter_mag": "Linear",
@@ -18,9 +18,9 @@
 			"generate_mipmaps": true,
 			"wrap_s": "Repeat",
 			"wrap_t": "Repeat",
-			"guid": "43ab2ba8-3fee-4748-a838-10b80d72ded7"
+			"guid": "4f8b259f-9472-314b-85d1-6c7b2e5b2e32"
 		},
-		"6e19f113-1cdb-9946-b56b-7ba1a1a3b310": {
+		"cd65067f-c79f-bf4c-a3a4-703235e79b78": {
 			"anisotropic": 16.0,
 			"filename": "textures/box-specular.png",
 			"filter_mag": "Linear",
@@ -28,9 +28,9 @@
 			"generate_mipmaps": true,
 			"wrap_s": "Repeat",
 			"wrap_t": "Repeat",
-			"guid": "6e19f113-1cdb-9946-b56b-7ba1a1a3b310"
+			"guid": "cd65067f-c79f-bf4c-a3a4-703235e79b78"
 		},
-		"48de8fdb-4f39-2948-b4d1-0fda81177201": {
+		"70c16f0b-2329-d44a-9cc6-6484b7f78fd2": {
 			"anisotropic": 16.0,
 			"filename": "textures/monkey-uvMap.png",
 			"filter_mag": "Linear",
@@ -38,9 +38,9 @@
 			"generate_mipmaps": true,
 			"wrap_s": "Repeat",
 			"wrap_t": "Repeat",
-			"guid": "48de8fdb-4f39-2948-b4d1-0fda81177201"
+			"guid": "70c16f0b-2329-d44a-9cc6-6484b7f78fd2"
 		},
-		"09cb6bae-d45c-5a4e-8618-8ba0c144c27f": {
+		"281e9fb1-888b-7549-88c4-1c38658f7c08": {
 			"anisotropic": 16.0,
 			"filename": "textures/leaves.png",
 			"filter_mag": "Nearest",
@@ -48,9 +48,9 @@
 			"generate_mipmaps": true,
 			"wrap_s": "Repeat",
 			"wrap_t": "Repeat",
-			"guid": "09cb6bae-d45c-5a4e-8618-8ba0c144c27f"
+			"guid": "281e9fb1-888b-7549-88c4-1c38658f7c08"
 		},
-		"8035baac-ba51-0c41-9447-24b3a10e3631": {
+		"b5dc9703-08b6-aa4a-b103-4667f0448d5c": {
 			"anisotropic": 16.0,
 			"filename": "textures/flashlight.png",
 			"filter_mag": "Linear",
@@ -58,9 +58,9 @@
 			"generate_mipmaps": true,
 			"wrap_s": "Repeat",
 			"wrap_t": "Repeat",
-			"guid": "8035baac-ba51-0c41-9447-24b3a10e3631"
+			"guid": "b5dc9703-08b6-aa4a-b103-4667f0448d5c"
 		},
-		"85842112-8bfa-9244-8d9c-608fe8ea2887": {
+		"58e5e00e-9292-0a42-bf89-baf2c730fcd1": {
 			"anisotropic": 16.0,
 			"filename": "textures/flashlight-2.png",
 			"filter_mag": "Linear",
@@ -68,9 +68,9 @@
 			"generate_mipmaps": true,
 			"wrap_s": "Repeat",
 			"wrap_t": "Repeat",
-			"guid": "85842112-8bfa-9244-8d9c-608fe8ea2887"
+			"guid": "58e5e00e-9292-0a42-bf89-baf2c730fcd1"
 		},
-		"3fa39677-62dc-8c44-8307-46e4a24c5dd8": {
+		"7ee17840-dac2-ce4d-b01e-d850f5b7fee9": {
 			"anisotropic": 16.0,
 			"filename": "textures/light_projection.png",
 			"filter_mag": "Linear",
@@ -78,9 +78,9 @@
 			"generate_mipmaps": true,
 			"wrap_s": "Repeat",
 			"wrap_t": "Repeat",
-			"guid": "3fa39677-62dc-8c44-8307-46e4a24c5dd8"
+			"guid": "7ee17840-dac2-ce4d-b01e-d850f5b7fee9"
 		},
-		"836466fe-854d-4549-94a4-8cbe13255860": {
+		"7368b31b-6e3b-0a43-b727-769b4d126f5f": {
 			"anisotropic": 16.0,
 			"data": "gYAAgAA_AD-BP4GAgYAAgAA_AD8APwAAAACAAIA_gD8Pw",
 			"filter_mag": "Linear",
@@ -92,9 +92,9 @@
 			"size_y": 1,
 			"wrap_s": "Repeat",
 			"wrap_t": "Repeat",
-			"guid": "836466fe-854d-4549-94a4-8cbe13255860"
+			"guid": "7368b31b-6e3b-0a43-b727-769b4d126f5f"
 		},
-		"3affe12f-35e2-7f4f-8148-2a416a514140": {
+		"87570da3-0d0e-4346-87b9-8097c4a5620a": {
 			"anisotropic": 16.0,
 			"data": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 			"filter_mag": "Linear",
@@ -106,9 +106,9 @@
 			"size_y": 1,
 			"wrap_s": "Repeat",
 			"wrap_t": "Repeat",
-			"guid": "3affe12f-35e2-7f4f-8148-2a416a514140"
+			"guid": "87570da3-0d0e-4346-87b9-8097c4a5620a"
 		},
-		"eec40463-5adf-d041-81ed-8c80ef7c13f0": {
+		"00d1fcd2-b0e5-f34c-a429-b1e9d4927537": {
 			"anisotropic": 16.0,
 			"data": "gYAAgAA_AD-BP4GAgYAAgAA_AD-BP4GAgYAAgAA_AD8Pw",
 			"filter_mag": "Linear",
@@ -120,9 +120,9 @@
 			"size_y": 1,
 			"wrap_s": "Repeat",
 			"wrap_t": "Repeat",
-			"guid": "eec40463-5adf-d041-81ed-8c80ef7c13f0"
+			"guid": "00d1fcd2-b0e5-f34c-a429-b1e9d4927537"
 		},
-		"1e9e7ba5-bdd1-d440-b3c3-6a9dd1f81ede": {
+		"3d91200a-7468-c040-a03d-78f48a593830": {
 			"anisotropic": 16.0,
 			"data": "AACAAIA_gD8APwAAAACAAIA_gD8APwAAAACAAIA_gD8Pw",
 			"filter_mag": "Linear",
@@ -134,9 +134,9 @@
 			"size_y": 1,
 			"wrap_s": "Repeat",
 			"wrap_t": "Repeat",
-			"guid": "1e9e7ba5-bdd1-d440-b3c3-6a9dd1f81ede"
+			"guid": "3d91200a-7468-c040-a03d-78f48a593830"
 		},
-		"63efcaf0-169e-6e43-a09a-66494cceb82f": {
+		"831a5cbb-2096-4645-9cff-19bb65ea04b9": {
 			"anisotropic": 16.0,
 			"filename": "objs/pacman/pacTex.png",
 			"filter_mag": "Linear",
@@ -144,9 +144,9 @@
 			"generate_mipmaps": true,
 			"wrap_s": "Repeat",
 			"wrap_t": "Repeat",
-			"guid": "63efcaf0-169e-6e43-a09a-66494cceb82f"
+			"guid": "831a5cbb-2096-4645-9cff-19bb65ea04b9"
 		},
-		"20281ed5-fc7f-f64e-8702-ca1a6e2d2def": {
+		"c21fe888-e575-cb4f-9bd6-9c577a85d2ab": {
 			"anisotropic": 16.0,
 			"filename": "objs/terrain/FullGrass.png",
 			"filter_mag": "Linear",
@@ -154,9 +154,9 @@
 			"generate_mipmaps": true,
 			"wrap_s": "Repeat",
 			"wrap_t": "Repeat",
-			"guid": "20281ed5-fc7f-f64e-8702-ca1a6e2d2def"
+			"guid": "c21fe888-e575-cb4f-9bd6-9c577a85d2ab"
 		},
-		"7ec9f1a3-9a1c-3b41-99dd-e96f2033e0c2": {
+		"447c61f3-13ef-804e-ae0b-f3bbc40811ab": {
 			"anisotropic": 16.0,
 			"filename": "objs/coin/CoinTexture.png",
 			"filter_mag": "Linear",
@@ -164,9 +164,9 @@
 			"generate_mipmaps": true,
 			"wrap_s": "Repeat",
 			"wrap_t": "Repeat",
-			"guid": "7ec9f1a3-9a1c-3b41-99dd-e96f2033e0c2"
+			"guid": "447c61f3-13ef-804e-ae0b-f3bbc40811ab"
 		},
-		"3be143dc-d991-dd41-b956-6e88b12deb4b": {
+		"482cc6fa-d0f2-7147-8b31-71a2ba3af0d7": {
 			"anisotropic": 16.0,
 			"filename": "objs/car/YellowStripeUV.png",
 			"filter_mag": "Linear",
@@ -174,9 +174,9 @@
 			"generate_mipmaps": true,
 			"wrap_s": "Repeat",
 			"wrap_t": "Repeat",
-			"guid": "3be143dc-d991-dd41-b956-6e88b12deb4b"
+			"guid": "482cc6fa-d0f2-7147-8b31-71a2ba3af0d7"
 		},
-		"f1c1683a-80cf-7f45-b1b0-f1418dc8bb8f": {
+		"d6734280-317a-ab47-b265-4ee2c10cc965": {
 			"anisotropic": 16.0,
 			"filename": "objs/rocks/rockTex.png",
 			"filter_mag": "Linear",
@@ -184,9 +184,9 @@
 			"generate_mipmaps": true,
 			"wrap_s": "Repeat",
 			"wrap_t": "Repeat",
-			"guid": "f1c1683a-80cf-7f45-b1b0-f1418dc8bb8f"
+			"guid": "d6734280-317a-ab47-b265-4ee2c10cc965"
 		},
-		"07e86182-69fa-7645-b8ff-ee5ed4db0cab": {
+		"3330bd0e-ed19-f24d-b07d-62fba8901788": {
 			"anisotropic": 16.0,
 			"filename": "objs/rocks/rockSpec.png",
 			"filter_mag": "Linear",
@@ -194,9 +194,9 @@
 			"generate_mipmaps": true,
 			"wrap_s": "Repeat",
 			"wrap_t": "Repeat",
-			"guid": "07e86182-69fa-7645-b8ff-ee5ed4db0cab"
+			"guid": "3330bd0e-ed19-f24d-b07d-62fba8901788"
 		},
-		"86ee9a5b-4b05-554a-a008-2c43faeb4b2b": {
+		"9cd2d0be-a96a-3342-b676-413a9f1e79d6": {
 			"anisotropic": 16.0,
 			"filename": "objs/tree/treeTexture.png",
 			"filter_mag": "Linear",
@@ -204,9 +204,9 @@
 			"generate_mipmaps": true,
 			"wrap_s": "Repeat",
 			"wrap_t": "Repeat",
-			"guid": "86ee9a5b-4b05-554a-a008-2c43faeb4b2b"
+			"guid": "9cd2d0be-a96a-3342-b676-413a9f1e79d6"
 		},
-		"92178ea5-5061-324a-808b-ca7cf32049dd": {
+		"777130bf-9ef8-9c49-9661-271d0114af7f": {
 			"anisotropic": 16.0,
 			"filename": "objs/branches/branchTex.png",
 			"filter_mag": "Linear",
@@ -214,9 +214,9 @@
 			"generate_mipmaps": true,
 			"wrap_s": "Repeat",
 			"wrap_t": "Repeat",
-			"guid": "92178ea5-5061-324a-808b-ca7cf32049dd"
+			"guid": "777130bf-9ef8-9c49-9661-271d0114af7f"
 		},
-		"db608838-4bcf-8740-9afb-37b6a046a346": {
+		"ac648bd3-95a2-3f45-bba5-0223f95b231a": {
 			"anisotropic": 16.0,
 			"filename": "textures/ui-sprite.png",
 			"filter_mag": "Linear",
@@ -224,11 +224,11 @@
 			"generate_mipmaps": true,
 			"wrap_s": "Repeat",
 			"wrap_t": "Repeat",
-			"guid": "db608838-4bcf-8740-9afb-37b6a046a346"
+			"guid": "ac648bd3-95a2-3f45-bba5-0223f95b231a"
 		}
 	},
 	"Texture2DArray": {
-		"0319f4d5-ca77-5341-8260-ee04e4f6615a": {
+		"26f7477b-6a6a-3c46-a2c4-b3d13de2bb9d": {
 			"anisotropic": 16.0,
 			"filename": "textures/particles.png",
 			"filter_mag": "Linear",
@@ -238,11 +238,11 @@
 			"wrap_t": "Repeat",
 			"x_split": 2,
 			"y_split": 2,
-			"guid": "0319f4d5-ca77-5341-8260-ee04e4f6615a"
+			"guid": "26f7477b-6a6a-3c46-a2c4-b3d13de2bb9d"
 		}
 	},
 	"Texture3D": {
-		"26ec8bf0-bb50-d241-ab02-e556a925ba45": {
+		"3f6c03ae-d339-cf4a-8315-00e8bfb0b004": {
 			"filename": "luts/cool.cube",
 			"filter_mag": "Linear",
 			"filter_min": "LinearMipLinear",
@@ -250,9 +250,9 @@
 			"wrap_r": "",
 			"wrap_s": "",
 			"wrap_t": "",
-			"guid": "26ec8bf0-bb50-d241-ab02-e556a925ba45"
+			"guid": "3f6c03ae-d339-cf4a-8315-00e8bfb0b004"
 		},
-		"c30fb66c-22f4-5e47-866b-436f2786aae9": {
+		"af1ceda5-bfb0-974a-a3c4-736db0a96a0d": {
 			"filename": "luts/COOL_LUT.CUBE",
 			"filter_mag": "Linear",
 			"filter_min": "LinearMipLinear",
@@ -260,9 +260,9 @@
 			"wrap_r": "",
 			"wrap_s": "",
 			"wrap_t": "",
-			"guid": "c30fb66c-22f4-5e47-866b-436f2786aae9"
+			"guid": "af1ceda5-bfb0-974a-a3c4-736db0a96a0d"
 		},
-		"2f66897c-389b-654f-9df2-12d1ccf91264": {
+		"d1d9f96e-78c9-9848-a2d5-8e5c414a1b01": {
 			"filename": "luts/WARM_LUT.CUBE",
 			"filter_mag": "Linear",
 			"filter_min": "LinearMipLinear",
@@ -270,9 +270,9 @@
 			"wrap_r": "",
 			"wrap_s": "",
 			"wrap_t": "",
-			"guid": "2f66897c-389b-654f-9df2-12d1ccf91264"
+			"guid": "d1d9f96e-78c9-9848-a2d5-8e5c414a1b01"
 		},
-		"5d1aef1c-56f1-e74d-adeb-b2aaa4978d0b": {
+		"eb0a06a2-bca1-2f41-a504-e3488259d3cf": {
 			"filename": "luts/CUS_LUT.CUBE",
 			"filter_mag": "Linear",
 			"filter_min": "LinearMipLinear",
@@ -280,9 +280,9 @@
 			"wrap_r": "",
 			"wrap_s": "",
 			"wrap_t": "",
-			"guid": "5d1aef1c-56f1-e74d-adeb-b2aaa4978d0b"
+			"guid": "eb0a06a2-bca1-2f41-a504-e3488259d3cf"
 		},
-		"0f095514-0f85-5444-9707-d1f2db24c9b1": {
+		"c248023a-96ae-6549-8e8d-0ac7e01bc8c7": {
 			"filename": "luts/NORM_LUT.CUBE",
 			"filter_mag": "Linear",
 			"filter_min": "LinearMipLinear",
@@ -290,26 +290,26 @@
 			"wrap_r": "",
 			"wrap_s": "",
 			"wrap_t": "",
-			"guid": "0f095514-0f85-5444-9707-d1f2db24c9b1"
+			"guid": "c248023a-96ae-6549-8e8d-0ac7e01bc8c7"
 		}
 	},
 	"TextureCube": {
-		"c6819d2c-da3c-0246-9088-0c034e654cbe": {
+		"6f99c495-cfe4-1541-9902-d1b8bc01de92": {
 			"face_filenames": {
-				"NegX": "C:\\Users\\leeju\\Documents\\GitHub\\nonGDW-Project-2350\\bin\\Debug-windows-x86_64\\PACMAN_W6B\\cubemaps\\ocean\\ocean_NegX.jpg",
-				"NegY": "C:\\Users\\leeju\\Documents\\GitHub\\nonGDW-Project-2350\\bin\\Debug-windows-x86_64\\PACMAN_W6B\\cubemaps\\ocean\\ocean_NegY.jpg",
-				"NegZ": "C:\\Users\\leeju\\Documents\\GitHub\\nonGDW-Project-2350\\bin\\Debug-windows-x86_64\\PACMAN_W6B\\cubemaps\\ocean\\ocean_NegZ.jpg",
-				"PosX": "C:\\Users\\leeju\\Documents\\GitHub\\nonGDW-Project-2350\\bin\\Debug-windows-x86_64\\PACMAN_W6B\\cubemaps\\ocean\\ocean_PosX.jpg",
-				"PosY": "C:\\Users\\leeju\\Documents\\GitHub\\nonGDW-Project-2350\\bin\\Debug-windows-x86_64\\PACMAN_W6B\\cubemaps\\ocean\\ocean_PosY.jpg",
-				"PosZ": "C:\\Users\\leeju\\Documents\\GitHub\\nonGDW-Project-2350\\bin\\Debug-windows-x86_64\\PACMAN_W6B\\cubemaps\\ocean\\ocean_PosZ.jpg"
+				"NegX": "C:\\Users\\leeju\\Documents\\GitHub\\nonGDW-Project-2350\\PACMAN_FINAL_VERSION_LiJeffrey_LeeJustin_FanTiantian_ZhangJingyao\\PACMAN_EXE\\cubemaps\\ocean\\ocean_NegX.jpg",
+				"NegY": "C:\\Users\\leeju\\Documents\\GitHub\\nonGDW-Project-2350\\PACMAN_FINAL_VERSION_LiJeffrey_LeeJustin_FanTiantian_ZhangJingyao\\PACMAN_EXE\\cubemaps\\ocean\\ocean_NegY.jpg",
+				"NegZ": "C:\\Users\\leeju\\Documents\\GitHub\\nonGDW-Project-2350\\PACMAN_FINAL_VERSION_LiJeffrey_LeeJustin_FanTiantian_ZhangJingyao\\PACMAN_EXE\\cubemaps\\ocean\\ocean_NegZ.jpg",
+				"PosX": "C:\\Users\\leeju\\Documents\\GitHub\\nonGDW-Project-2350\\PACMAN_FINAL_VERSION_LiJeffrey_LeeJustin_FanTiantian_ZhangJingyao\\PACMAN_EXE\\cubemaps\\ocean\\ocean_PosX.jpg",
+				"PosY": "C:\\Users\\leeju\\Documents\\GitHub\\nonGDW-Project-2350\\PACMAN_FINAL_VERSION_LiJeffrey_LeeJustin_FanTiantian_ZhangJingyao\\PACMAN_EXE\\cubemaps\\ocean\\ocean_PosY.jpg",
+				"PosZ": "C:\\Users\\leeju\\Documents\\GitHub\\nonGDW-Project-2350\\PACMAN_FINAL_VERSION_LiJeffrey_LeeJustin_FanTiantian_ZhangJingyao\\PACMAN_EXE\\cubemaps\\ocean\\ocean_PosZ.jpg"
 			},
 			"filter_mag": "Linear",
 			"filter_min": "NearestMipLinear",
-			"guid": "c6819d2c-da3c-0246-9088-0c034e654cbe"
+			"guid": "6f99c495-cfe4-1541-9902-d1b8bc01de92"
 		}
 	},
 	"ShaderProgram": {
-		"6ba470cd-6b4f-d448-900a-7a67f2fc7351": {
+		"c909e359-404b-d049-be52-de93a7abb1dc": {
 			"Fragment": {
 				"path": "shaders/fragment_shaders/post_effects/color_correction.glsl"
 			},
@@ -317,9 +317,9 @@
 				"path": "shaders/vertex_shaders/fullscreen_quad.glsl"
 			},
 			"name": "",
-			"guid": "6ba470cd-6b4f-d448-900a-7a67f2fc7351"
+			"guid": "c909e359-404b-d049-be52-de93a7abb1dc"
 		},
-		"5fc42b5f-81c8-a146-bcb1-d55557b50ea0": {
+		"4784d44b-7f93-6b4a-b8cb-a34cd80863a1": {
 			"Fragment": {
 				"path": "shaders/fragment_shaders/post_effects/box_filter_3.glsl"
 			},
@@ -327,9 +327,9 @@
 				"path": "shaders/vertex_shaders/fullscreen_quad.glsl"
 			},
 			"name": "",
-			"guid": "5fc42b5f-81c8-a146-bcb1-d55557b50ea0"
+			"guid": "4784d44b-7f93-6b4a-b8cb-a34cd80863a1"
 		},
-		"a0f66a69-967e-124a-8e97-0cd3d0ba5e22": {
+		"396f898e-2056-644c-8623-e7029b598505": {
 			"Fragment": {
 				"path": "shaders/fragment_shaders/post_effects/box_filter_5.glsl"
 			},
@@ -337,9 +337,9 @@
 				"path": "shaders/vertex_shaders/fullscreen_quad.glsl"
 			},
 			"name": "",
-			"guid": "a0f66a69-967e-124a-8e97-0cd3d0ba5e22"
+			"guid": "396f898e-2056-644c-8623-e7029b598505"
 		},
-		"2eff71ca-2b6e-ef4b-96fb-ad0166a4251c": {
+		"efd0a764-83bc-334a-a00f-895af89a716b": {
 			"Fragment": {
 				"path": "shaders/fragment_shaders/post_effects/outline.glsl"
 			},
@@ -347,9 +347,9 @@
 				"path": "shaders/vertex_shaders/fullscreen_quad.glsl"
 			},
 			"name": "",
-			"guid": "2eff71ca-2b6e-ef4b-96fb-ad0166a4251c"
+			"guid": "efd0a764-83bc-334a-a00f-895af89a716b"
 		},
-		"a4ea1b58-4828-ad4c-868e-0afd02bcdc5a": {
+		"c79e4f86-ad5a-304d-9ff0-bd1166fc495b": {
 			"Fragment": {
 				"path": "shaders/fragment_shaders/post_effects/depth_of_field.glsl"
 			},
@@ -357,9 +357,9 @@
 				"path": "shaders/vertex_shaders/fullscreen_quad.glsl"
 			},
 			"name": "",
-			"guid": "a4ea1b58-4828-ad4c-868e-0afd02bcdc5a"
+			"guid": "c79e4f86-ad5a-304d-9ff0-bd1166fc495b"
 		},
-		"b913286a-c488-2243-910b-f15e846cbf30": {
+		"f759ec3a-dc23-354a-9792-dade346c55ae": {
 			"Fragment": {
 				"path": "shaders/fragment_shaders/post_effects/bloom.glsl"
 			},
@@ -367,9 +367,9 @@
 				"path": "shaders/vertex_shaders/fullscreen_quad.glsl"
 			},
 			"name": "",
-			"guid": "b913286a-c488-2243-910b-f15e846cbf30"
+			"guid": "f759ec3a-dc23-354a-9792-dade346c55ae"
 		},
-		"d8012f21-9001-7c45-b999-917888fa7cbf": {
+		"6aca0f3e-b318-4f42-bb2c-b4b940fa2ed3": {
 			"Fragment": {
 				"path": "shaders/fragment_shaders/post_effects/pixelation.glsl"
 			},
@@ -377,9 +377,9 @@
 				"path": "shaders/vertex_shaders/fullscreen_quad.glsl"
 			},
 			"name": "",
-			"guid": "d8012f21-9001-7c45-b999-917888fa7cbf"
+			"guid": "6aca0f3e-b318-4f42-bb2c-b4b940fa2ed3"
 		},
-		"70a6ac16-174e-7149-9f44-241dde3ef063": {
+		"3295ff3e-82da-fb4d-ab55-d9ea30c450f7": {
 			"Fragment": {
 				"path": "shaders/fragment_shaders/post_effects/night_vision.glsl"
 			},
@@ -387,9 +387,9 @@
 				"path": "shaders/vertex_shaders/fullscreen_quad.glsl"
 			},
 			"name": "",
-			"guid": "70a6ac16-174e-7149-9f44-241dde3ef063"
+			"guid": "3295ff3e-82da-fb4d-ab55-d9ea30c450f7"
 		},
-		"487a6f40-a058-8345-a500-36f1551620a9": {
+		"d3f98d03-c306-7448-8038-abb2bd96fa9a": {
 			"Fragment": {
 				"path": "shaders/my_frag/frag_specular.glsl"
 			},
@@ -397,9 +397,9 @@
 				"path": "shaders/vertex_shaders/basic.glsl"
 			},
 			"name": "Textured Specular",
-			"guid": "487a6f40-a058-8345-a500-36f1551620a9"
+			"guid": "d3f98d03-c306-7448-8038-abb2bd96fa9a"
 		},
-		"e56cf40b-a4f8-6741-9224-5a684873b097": {
+		"160413b4-e651-a048-8139-bf09d721c48d": {
 			"Fragment": {
 				"path": "shaders/my_frag/frag_nothing.glsl"
 			},
@@ -407,9 +407,9 @@
 				"path": "shaders/vertex_shaders/basic.glsl"
 			},
 			"name": "Basic Shader",
-			"guid": "e56cf40b-a4f8-6741-9224-5a684873b097"
+			"guid": "160413b4-e651-a048-8139-bf09d721c48d"
 		},
-		"6a7b9b18-047d-7c43-abfb-152f03f64e61": {
+		"9a622838-6c30-ca4c-9ce2-c02a65a8ba90": {
 			"Fragment": {
 				"path": "shaders/my_frag/frag_blinn_phong.glsl"
 			},
@@ -417,9 +417,9 @@
 				"path": "shaders/vertex_shaders/basic.glsl"
 			},
 			"name": "Blinn Phong Shader",
-			"guid": "6a7b9b18-047d-7c43-abfb-152f03f64e61"
+			"guid": "9a622838-6c30-ca4c-9ce2-c02a65a8ba90"
 		},
-		"6a4c171f-43c2-274a-b120-26e45c84c24d": {
+		"d7fc9636-8e27-a141-bbb2-a2c56d5c69d8": {
 			"Fragment": {
 				"path": "shaders/my_frag/frag_toon.glsl"
 			},
@@ -427,9 +427,9 @@
 				"path": "shaders/vertex_shaders/basic.glsl"
 			},
 			"name": "Toon Shader",
-			"guid": "6a4c171f-43c2-274a-b120-26e45c84c24d"
+			"guid": "d7fc9636-8e27-a141-bbb2-a2c56d5c69d8"
 		},
-		"dcf44704-1c63-0242-879d-3837b578a2d0": {
+		"fbbcfacc-d55f-1040-a5e1-f1b297236207": {
 			"Fragment": {
 				"path": "shaders/my_frag/frag_deferred.glsl"
 			},
@@ -437,9 +437,9 @@
 				"path": "shaders/vertex_shaders/basic.glsl"
 			},
 			"name": "Deferred - GBuffer Generation",
-			"guid": "dcf44704-1c63-0242-879d-3837b578a2d0"
+			"guid": "fbbcfacc-d55f-1040-a5e1-f1b297236207"
 		},
-		"daa0f37a-217e-f645-877a-d4399484eac7": {
+		"38c66ad8-b979-6b4f-8393-cadc0286f98a": {
 			"Fragment": {
 				"path": "shaders/fragment_shaders/skybox_frag.glsl"
 			},
@@ -447,32 +447,32 @@
 				"path": "shaders/vertex_shaders/skybox_vert.glsl"
 			},
 			"name": "",
-			"guid": "daa0f37a-217e-f645-877a-d4399484eac7"
+			"guid": "38c66ad8-b979-6b4f-8393-cadc0286f98a"
 		}
 	},
 	"Gameplay::Material": {
-		"da44a5d8-422d-2746-bcd6-8ed6b41ec785": {
-			"guid": "da44a5d8-422d-2746-bcd6-8ed6b41ec785",
+		"d38bdf13-dcbf-8840-875d-91b3eba388d6": {
+			"guid": "d38bdf13-dcbf-8840-875d-91b3eba388d6",
 			"name": "character Material",
 			"parameters": {
 				"u_Material.Diffuse": {
 					"type": "Tex2D",
-					"value": "63efcaf0-169e-6e43-a09a-66494cceb82f"
+					"value": "831a5cbb-2096-4645-9cff-19bb65ea04b9"
 				},
 				"u_Material.Shininess": {
 					"type": "Float",
 					"value": 1.0
 				}
 			},
-			"shader": "6a7b9b18-047d-7c43-abfb-152f03f64e61"
+			"shader": "9a622838-6c30-ca4c-9ce2-c02a65a8ba90"
 		},
-		"e04d47d9-4718-e94f-9eb2-0a3d11b7083c": {
-			"guid": "e04d47d9-4718-e94f-9eb2-0a3d11b7083c",
+		"f9b00757-b9b6-eb47-a06c-dcb50cefc945": {
+			"guid": "f9b00757-b9b6-eb47-a06c-dcb50cefc945",
 			"name": "Terrain-Mat",
 			"parameters": {
 				"u_Material.Diffuse": {
 					"type": "Tex2D",
-					"value": "20281ed5-fc7f-f64e-8702-ca1a6e2d2def"
+					"value": "c21fe888-e575-cb4f-9bd6-9c577a85d2ab"
 				},
 				"u_Material.DiscardThreshold": {
 					"type": "Float",
@@ -488,136 +488,136 @@
 				},
 				"u_Material.NormalMap": {
 					"type": "Tex2D",
-					"value": "836466fe-854d-4549-94a4-8cbe13255860"
+					"value": "7368b31b-6e3b-0a43-b727-769b4d126f5f"
 				}
 			},
-			"shader": "dcf44704-1c63-0242-879d-3837b578a2d0"
+			"shader": "fbbcfacc-d55f-1040-a5e1-f1b297236207"
 		},
-		"354e73a0-826d-5347-a268-af203ff39a74": {
-			"guid": "354e73a0-826d-5347-a268-af203ff39a74",
+		"33e61dde-c642-c445-a26e-e19e05e33e87": {
+			"guid": "33e61dde-c642-c445-a26e-e19e05e33e87",
 			"name": "Goal Material",
 			"parameters": {
 				"u_Material.Diffuse": {
 					"type": "Tex2D",
-					"value": "7ec9f1a3-9a1c-3b41-99dd-e96f2033e0c2"
+					"value": "447c61f3-13ef-804e-ae0b-f3bbc40811ab"
 				},
 				"u_Material.Shininess": {
 					"type": "Float",
 					"value": 0.800000011920929
 				}
 			},
-			"shader": "6a7b9b18-047d-7c43-abfb-152f03f64e61"
+			"shader": "9a622838-6c30-ca4c-9ce2-c02a65a8ba90"
 		},
-		"02a3aa64-05db-cc4e-9589-34581347edc0": {
-			"guid": "02a3aa64-05db-cc4e-9589-34581347edc0",
+		"6cb8f9f8-f266-404a-a88a-9bf3b0dc61c6": {
+			"guid": "6cb8f9f8-f266-404a-a88a-9bf3b0dc61c6",
 			"name": "CAR Material",
 			"parameters": {
 				"u_Material.Diffuse": {
 					"type": "Tex2D",
-					"value": "3be143dc-d991-dd41-b956-6e88b12deb4b"
+					"value": "482cc6fa-d0f2-7147-8b31-71a2ba3af0d7"
 				},
 				"u_Material.Shininess": {
 					"type": "Float",
 					"value": 0.800000011920929
 				}
 			},
-			"shader": "6a7b9b18-047d-7c43-abfb-152f03f64e61"
+			"shader": "9a622838-6c30-ca4c-9ce2-c02a65a8ba90"
 		},
-		"13324092-9e9d-ca44-ae5d-644f64a6ae4b": {
-			"guid": "13324092-9e9d-ca44-ae5d-644f64a6ae4b",
+		"a9150449-041b-c64e-9e81-b3c2724ebf5e": {
+			"guid": "a9150449-041b-c64e-9e81-b3c2724ebf5e",
 			"name": "CAR Material",
 			"parameters": {
 				"toonTex": {
 					"type": "Tex1D",
-					"value": "865cf59f-c5ea-c742-b08e-6bb6f54a9bad"
+					"value": "7e6d77c1-6f60-2947-930e-edc5a184aa49"
 				},
 				"u_Material.Diffuse": {
 					"type": "Tex2D",
-					"value": "3be143dc-d991-dd41-b956-6e88b12deb4b"
+					"value": "482cc6fa-d0f2-7147-8b31-71a2ba3af0d7"
 				},
 				"u_Material.Specular": {
 					"type": "Tex2D",
 					"value": "null"
 				}
 			},
-			"shader": "6a4c171f-43c2-274a-b120-26e45c84c24d"
+			"shader": "d7fc9636-8e27-a141-bbb2-a2c56d5c69d8"
 		},
-		"e3b75365-6c88-0f44-98ba-dc10bed5720d": {
-			"guid": "e3b75365-6c88-0f44-98ba-dc10bed5720d",
+		"47590312-216a-b546-957c-6c201c27f7ca": {
+			"guid": "47590312-216a-b546-957c-6c201c27f7ca",
 			"name": "Rock-Mat",
 			"parameters": {
 				"u_Material.Diffuse": {
 					"type": "Tex2D",
-					"value": "f1c1683a-80cf-7f45-b1b0-f1418dc8bb8f"
+					"value": "d6734280-317a-ab47-b265-4ee2c10cc965"
 				},
 				"u_Material.Specular": {
 					"type": "Tex2D",
-					"value": "07e86182-69fa-7645-b8ff-ee5ed4db0cab"
+					"value": "3330bd0e-ed19-f24d-b07d-62fba8901788"
 				}
 			},
-			"shader": "487a6f40-a058-8345-a500-36f1551620a9"
+			"shader": "d3f98d03-c306-7448-8038-abb2bd96fa9a"
 		},
-		"bcb432f2-f139-f046-a16d-ed20b7d8d366": {
-			"guid": "bcb432f2-f139-f046-a16d-ed20b7d8d366",
+		"be95879c-9640-e442-bf6e-9a0385bb8e5a": {
+			"guid": "be95879c-9640-e442-bf6e-9a0385bb8e5a",
 			"name": "Tree-Mat",
 			"parameters": {
 				"u_Material.Diffuse": {
 					"type": "Tex2D",
-					"value": "86ee9a5b-4b05-554a-a008-2c43faeb4b2b"
+					"value": "9cd2d0be-a96a-3342-b676-413a9f1e79d6"
 				},
 				"u_Material.Shininess": {
 					"type": "Float",
 					"value": 1.0
 				}
 			},
-			"shader": "6a7b9b18-047d-7c43-abfb-152f03f64e61"
+			"shader": "9a622838-6c30-ca4c-9ce2-c02a65a8ba90"
 		},
-		"65fe0bf2-f797-5e42-bac4-fb1680a39a7c": {
-			"guid": "65fe0bf2-f797-5e42-bac4-fb1680a39a7c",
+		"a48e6c66-f89d-ed43-bc8d-ba69ec153445": {
+			"guid": "a48e6c66-f89d-ed43-bc8d-ba69ec153445",
 			"name": "Branch-Mat",
 			"parameters": {
 				"u_Material.Diffuse": {
 					"type": "Tex2D",
-					"value": "92178ea5-5061-324a-808b-ca7cf32049dd"
+					"value": "777130bf-9ef8-9c49-9661-271d0114af7f"
 				},
 				"u_Material.Shininess": {
 					"type": "Float",
 					"value": 1.0
 				}
 			},
-			"shader": "6a7b9b18-047d-7c43-abfb-152f03f64e61"
+			"shader": "9a622838-6c30-ca4c-9ce2-c02a65a8ba90"
 		}
 	},
 	"Gameplay::MeshResource": {
-		"bd572e56-2332-be45-86da-6e133f82b95b": {
+		"ed433830-7753-bd46-903b-ae6f017dd296": {
 			"filename": "objs/pacman/pacman.obj",
-			"guid": "bd572e56-2332-be45-86da-6e133f82b95b"
+			"guid": "ed433830-7753-bd46-903b-ae6f017dd296"
 		},
-		"eee5d96b-5043-bf4d-a643-f2395204bc44": {
+		"ec810b27-7a9c-1842-af18-3c6c3ed6cd4d": {
 			"filename": "objs/terrain/plainTerrain.obj",
-			"guid": "eee5d96b-5043-bf4d-a643-f2395204bc44"
+			"guid": "ec810b27-7a9c-1842-af18-3c6c3ed6cd4d"
 		},
-		"37bc76be-a97d-0845-9f60-5d00fc178bb5": {
+		"149a9241-e11e-8b4e-8572-4d1c3250712b": {
 			"filename": "objs/coin/coin.obj",
-			"guid": "37bc76be-a97d-0845-9f60-5d00fc178bb5"
+			"guid": "149a9241-e11e-8b4e-8572-4d1c3250712b"
 		},
-		"3554f08e-4ee5-eb46-8f93-5156d3c76752": {
+		"8d7882d4-4a5d-c944-a317-38834d892b73": {
 			"filename": "objs/car/Car.obj",
-			"guid": "3554f08e-4ee5-eb46-8f93-5156d3c76752"
+			"guid": "8d7882d4-4a5d-c944-a317-38834d892b73"
 		},
-		"f3938237-2810-5c41-861a-3cee5afa8448": {
+		"e6b3cdd8-cf58-574f-95c3-63469fe87c93": {
 			"filename": "objs/rocks/rock1.obj",
-			"guid": "f3938237-2810-5c41-861a-3cee5afa8448"
+			"guid": "e6b3cdd8-cf58-574f-95c3-63469fe87c93"
 		},
-		"f50ff969-4c10-a249-a70b-c38d35b3b8b3": {
+		"5a57b18f-d03c-9147-afba-7dd6a72551c2": {
 			"filename": "objs/tree/tree.obj",
-			"guid": "f50ff969-4c10-a249-a70b-c38d35b3b8b3"
+			"guid": "5a57b18f-d03c-9147-afba-7dd6a72551c2"
 		},
-		"d3b18f58-7894-d344-aaba-4b72c5228642": {
+		"59204451-ed2d-0043-89ea-65a45135fa35": {
 			"filename": "objs/branches/branches.obj",
-			"guid": "d3b18f58-7894-d344-aaba-4b72c5228642"
+			"guid": "59204451-ed2d-0043-89ea-65a45135fa35"
 		},
-		"9ee515e5-fd73-7a43-a360-82757b01b642": {
+		"5442a78f-818e-9142-a076-8802fd54d377": {
 			"params": [
 				{
 					"color": {
@@ -656,9 +656,9 @@
 					"type": "Plane"
 				}
 			],
-			"guid": "9ee515e5-fd73-7a43-a360-82757b01b642"
+			"guid": "5442a78f-818e-9142-a076-8802fd54d377"
 		},
-		"e0fa48e3-4da5-b740-a4d5-2c73ec342e1f": {
+		"e0ab4408-26bf-7247-92ae-4d1cdec32c56": {
 			"params": [
 				{
 					"color": {
@@ -687,7 +687,7 @@
 					"type": "IcoShere"
 				}
 			],
-			"guid": "e0fa48e3-4da5-b740-a4d5-2c73ec342e1f"
+			"guid": "e0ab4408-26bf-7247-92ae-4d1cdec32c56"
 		}
 	},
 	"Font": null,
